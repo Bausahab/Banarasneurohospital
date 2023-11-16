@@ -29,7 +29,7 @@ namespace OIPD
                 /*if (txtdoc.Text.ToString().Equals(""))
                     throw new Exception("Enter Doctors Name");*/
                 hypPrint.Visible = true;
-                hypPrint.NavigateUrl = "pad.aspx?sno=" + sno + "&docname=" + txtdoc.Text;
+                hypPrint.NavigateUrl = "pad.aspx?sno=" + sno + "&docname=_" ;
             }
             catch (Exception ex)
             {

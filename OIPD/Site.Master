@@ -14,7 +14,7 @@
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script  src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     
-    <title><%: Page.Title %> - MAIO - Application</title>
+    <title><%: Page.Title %> - M.A.I.O - Total Hospital Solution</title>
 
     <asp:PlaceHolder runat="server">
         <%: Scripts.Render("~/bundles/modernizr") %>
@@ -30,31 +30,33 @@
             <div class="w3-col s2 w3-mobile w3-margin-bottom w3-margin-top w3-center">
                 <a href="home.aspx">
                     <img src="Resources/Title_UB.png" alt="Logo" class="w3-hide-small applogo" width="30%"/>
-                    <img src="Resources/Title_UB.png" alt="Logo" class="w3-hide-medium w3-hide-large applogo" width="20%"/>
+                    <img src="Resources/Title_UB.png" alt="Logo" class="w3-hide-medium w3-hide-large applogo" width="42%"/>
                 </a>
             </div>
             <div class="w3-col s10 w3-mobile">
                 <div class="w3-hide-small">
                     <label class="w3-left apptitle" style="font-weight:bold">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<u>M.A.I.O</u></label>
-                    <label class="w3-right appsbutitle" style="font-weight:bold">Developed by. : With Love@UBROSOFT&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label><br/>
+                    <label class="w3-right appsbutitle" style="font-weight:bold">Developed by. : Rishabh@UbroSoft&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label><br/>
                     <center>
-                        <label class="w3-xlarge w3-center appbigtitle"><b>M.A.I.O | Medecine Accounts IPD & OPD</b></label><!--<center><label class="w3-xxlarge w3-text-aqua w3-center">लाइफ केयर हॉस्पिटल एंड सर्जिकल सेंटर ट्रामा क्रिटिकल केयर</label>--><br />
+                        <label class="w3-xlarge w3-center appbigtitle"><b>|| M.A.I.O || Medecine-Diagnostics-Accounts-IPD-OPD|</b></label><!--<center><label class="w3-xxlarge w3-text-aqua w3-center">लाइफ केयर हॉस्पिटल एंड सर्जिकल सेंटर ट्रामा क्रिटिकल केयर</label>--><br />
                         <label class="w3-large w3-center w3-centered appaddress" ><b>Varanasi, Uttar Pradesh</b></label>
                     </center>
                 </div>
                 <div class="w3-hide-large w3-hide-medium">
                     <center>   
                         <label class="w3-small apptitle" style="font-weight:bold">M.A.I.O</label><br />
-                        <label class="w3-small appsubtitle" style="font-weight:bold">Developed by. : With Love@UBROSOFT</label><br/>
-                        <label class="w3-center appbigtitle"><b>M.A.I.O | Medecine Accounts IPD & OPD</b></label><!--<center><label class="w3-xxlarge w3-text-aqua w3-center">लाइफ केयर हॉस्पिटल एंड सर्जिकल सेंटर ट्रामा क्रिटिकल केयर</label>--><br />
+                        <label class="w3-small appsubtitle" style="font-weight:bold">Developed by. : Rishabh@UbroSoft</label><br/>
+                        <label class="w3-center appbigtitle"><b>|| M.A.I.O || Medecine-Diagnostics-Accounts-IPD-OPD|</b></label><!--<center><label class="w3-xxlarge w3-text-aqua w3-center">लाइफ केयर हॉस्पिटल एंड सर्जिकल सेंटर ट्रामा क्रिटिकल केयर</label>--><br />
                         <label class="w3-center w3-centered appaddress"><b>Varanasi, Uttar Pradesh</b></label>
                     </center>
                 </div>
             </div>
         </div>
         <!-------------------------------------------------------------------------------------------------->
+
         <div class="w3-bar greenish glossBar" id="adminMenu" runat="server">
             <a href="home.aspx" class="w3-bar-item glossButton w3-button"><img src="Resources/home.png" alt="homeLogo" height="17" /> Home</a>
+
             <div class="w3-dropdown-hover w3-hide-small">
                 <button class="w3-button"><img src="Resources/opdEntry.png" alt="printLogo" height="17" /> OPD</button>
                 <div class="w3-dropdown-content w3-bar-block w3-card-4">
@@ -62,6 +64,7 @@
                     <a href="renewal.aspx" class="w3-bar-item w3-button glossButton"><img src="Resources/ipdEntry.png" alt="ipdLogo" height="17" /> Renew Form</a>
                 </div>
             </div>
+
             <a href="ipdregistration.aspx" class="w3-bar-item w3-button w3-hide-small glossButton"><img src="Resources/ipdEntry.png" alt="ipdLogo" height="17" /> IPD</a>
             <a href="emergency.aspx" class="w3-bar-item w3-button w3-hide-small glossButton"><img src="Resources/emergency.png" alt="emergencyLogo" height="17" /> Emergency</a>
             <a href="changeWard.aspx" class="w3-bar-item w3-button w3-hide-small glossButton"><img src="Resources/transfer.png" alt="transferLogo" height="17" /> Transfer</a>
@@ -126,6 +129,7 @@
             </div>
             <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large glossButton w3-hide-medium" onclick="myFunction()">&#9776;</a>
         </div>
+
         <div id="demo" class="w3-bar-block w3-red w3-hide w3-hide-large w3-hide-medium" runat="server">
           <a href="departmentlist.aspx" class="w3-bar-item w3-button glossButton"><img src="Resources/opdEntry.png" alt="opdLogo" height="17" /> OPD</a>
           <a href="ipdregistration.aspx" class="w3-bar-item w3-button glossButton"><img src="Resources/ipdEntry.png" alt="ipdLogo" height="17" /> IPD</a>
@@ -189,6 +193,7 @@
             </div>
             <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="myUserFunction()">&#9776;</a>
         </div>
+
         <div id="demoUser" class="w3-bar-block w3-red w3-hide w3-hide-large w3-hide-medium" runat="server">
           <a href="departmentlist.aspx" class="w3-bar-item w3-button"><img src="Resources/opdEntry.png" alt="opdLogo" height="17" /> OPD</a>
           <a href="ipdregistration.aspx" class="w3-bar-item w3-button"><img src="Resources/ipdEntry.png" alt="ipdLogo" height="17" /> IPD</a>
@@ -198,6 +203,7 @@
         <div class="w3-bar greenish glossBar" id="index" runat="server">
             <a href="Login.aspx" class="w3-bar-item w3-button glossButton"><img src="Resources/login.png" alt="loginLogo" height="17" /> Login</a>
         </div>
+
         <script type="text/javascript">
             function myFunction() {
                 var x = document.getElementById("demo");
@@ -219,7 +225,7 @@
 
         </script>
     </div>
-    <form runat="server">
+        <form runat="server">
         <asp:ScriptManager runat="server">
             <Scripts>
                 <%--To learn more about bundling scripts in ScriptManager see https://go.microsoft.com/fwlink/?LinkID=301884 --%>
@@ -239,6 +245,7 @@
                 <%--Site Scripts--%>
             </Scripts>
         </asp:ScriptManager>
+
         <br /><br /><br /><br /><br /><div class="w3-hide-medium w3-hide-large"><br /><br /><br /><br /></div>
        
        
@@ -247,7 +254,7 @@
             </asp:ContentPlaceHolder>
             
             <footer>
-                <p>&copy; <%: DateTime.Now.Year %> - MAIO - Application</p>
+                <p> <%: DateTime.Now.Year %> - M.A.I.O - Application  | &#169; BanarasNeroHospital |</p>
             </footer>
         </div>
 

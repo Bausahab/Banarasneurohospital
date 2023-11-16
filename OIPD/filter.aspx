@@ -104,7 +104,7 @@
                             <asp:Button Width="100%" onclick="allList" id="leftA" runat="server" CssClass="w3-padding-large w3-text-white" style="border-width:0px; background-color:rgba(255,255,255,0); cursor:pointer" Text-="All" />
                         </div>
                         <div class="w3-padding-small back1 inactiveLeft" style="cursor:pointer" id="leftGeet" runat="server" >
-                            <asp:Button Width="100%" onclick="geetList" id="left1" runat="server" CssClass="w3-padding-large w3-text-white" style="border-width:0px; background-color:rgba(255,255,255,0); cursor:pointer" Text-="Geetanjali" />
+                            <asp:Button Width="100%" onclick="geetList" id="left1" runat="server" CssClass="w3-padding-large w3-text-white" style="border-width:0px; background-color:rgba(255,255,255,0); cursor:pointer" Text-="BanarasNeuro" />
                         </div>
                         <div class="w3-padding-small back2 inactiveLeft" style="cursor:pointer" id="leftAyush" runat="server">
                             <asp:Button Width="100%" onclick="ayushList" id="left2" runat="server" CssClass="w3-padding-large w3-text-white" style="border-width:0px; background-color:rgba(255,255,255,0); cursor:pointer" Text-="Ayushman" />

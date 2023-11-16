@@ -55,7 +55,7 @@ namespace OIPD
                 string refference = "Self", doctorNo = "0";
 
                 if (!rdoLst.Items[0].Selected && !rdoLst.Items[1].Selected && !rdoLst.Items[2].Selected)
-                    throw new Exception("Please Select Geetanjali or Ayushman");
+                    throw new Exception("Please Select BanarasNeuro or Ayushman");
 
                 if (txtdate.Text.Equals(""))
                     throw new Exception("Please Select Date");
@@ -207,7 +207,7 @@ namespace OIPD
                     }
                 }
 
-                btnPrint.NavigateUrl = "printPad.aspx?sno=" + sno;
+                btnPrint.NavigateUrl = $"printReceipt.aspx?sno={sno}";
             }
             catch (Exception ex)
             {

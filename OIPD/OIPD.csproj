@@ -168,8 +168,8 @@
     <Content Include="Resources\discharge.png" />
     <Content Include="Resources\emergency.png" />
     <Content Include="Resources\event.png" />
+    <Content Include="Resources\geetanjaliLogo.jpeg" />
     <Content Include="Resources\geetanjaliLogo.png" />
-    <Content Include="Resources\geetanjaliLogoOld.png" />
     <Content Include="Resources\hidePassword.png" />
     <Content Include="Resources\home.png" />
     <Content Include="Resources\hospital-logo.png" />
@@ -180,7 +180,7 @@
     <Content Include="Resources\logout.png" />
     <Content Include="Resources\newUser.png" />
     <Content Include="Resources\opdEntry.png" />
-    <Content Include="Resources\pad.png" />
+    <Content Include="Resources\pad.jpg" />
     <Content Include="Resources\padNew.jpg" />
     <Content Include="Resources\payments.png" />
     <Content Include="Resources\print.png" />
@@ -191,9 +191,7 @@
     <Content Include="Resources\signature.png" />
     <Content Include="Resources\signature2.png" />
     <Content Include="Resources\signatureWhite.png" />
-    <Content Include="Resources\Title_UB.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
+    <Content Include="Resources\Title_UB.png" />
     <Content Include="Resources\transfer.png" />
     <Content Include="Resources\unauthorized.jpg" />
     <Content Include="roommaster.aspx" />

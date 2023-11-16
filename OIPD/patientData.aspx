@@ -48,7 +48,7 @@
                     <br style="line-height:0.5" />
                     <div class="w3-row">
                         <div class="w3-col s5"><asp:Label ID="lblTypeOfPatient" Font-Bold="true" runat="server" CssClass="w3-left" Text="Under -: "/></div>
-                        <div class="w3-col s7"><asp:Label ID="lblPatientType" runat="server" CssClass="w3-left" Text="Geetanjali"/></div>
+                        <div class="w3-col s7"><asp:Label ID="lblPatientType" runat="server" CssClass="w3-left" Text="BanarasNeuro"/></div>
                     </div>
                     <br style="line-height:0.5" />
                     <div class="w3-row">
@@ -128,7 +128,7 @@
                 <div class="w3-col s3"><asp:Label ID="lblAdmitReason" Font-Bold="true" CssClass="w3-left" runat="server" Text="Admited For -: " /></div>
                 <div class="w3-col s4"><asp:Label ID="lblReason" CssClass="w3-left" runat="server" Text=""/></div>
                 <div class="w3-col s2"><asp:Label ID="lblDateOfAdmit" Font-Bold="true" runat="server" CssClass="w3-left" Text="Date -: "/></div>
-                <div class="w3-col s3"><asp:Label ID="lblIPDDate" runat="server" CssClass="w3-left" Text="Geetanjali"/></div>
+                <div class="w3-col s3"><asp:Label ID="lblIPDDate" runat="server" CssClass="w3-left" Text="BanarasNeuro"/></div>
             </div>
             <br style="line-height:0.5" />
             <div class="w3-row">
@@ -136,7 +136,7 @@
                 <div class="w3-col s3"><asp:Label ID="lblDoctorIncharge" Font-Bold="true" runat="server" CssClass="w3-left" Text="Doctor Incharge -: "/></div>
                 <div class="w3-col s4"><asp:Label ID="lblDoctor" runat="server" CssClass="w3-left" Text="GLC/2019/12/06/198"/></div>
                 <div class="w3-col s2"><asp:Label ID="lblToBeChargedAs" Font-Bold="true" runat="server" CssClass="w3-left" Text="Charged As -: "/></div>
-                <div class="w3-col s3"><asp:Label ID="lblChargedAs" runat="server" CssClass="w3-left" Text="Geetanjali"/></div>
+                <div class="w3-col s3"><asp:Label ID="lblChargedAs" runat="server" CssClass="w3-left" Text="BanarasNeuro"/></div>
             </div>
             <br />
             <div class="w3-border w3-border-teal w3-padding-small">

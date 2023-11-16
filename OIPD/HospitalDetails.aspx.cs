@@ -85,7 +85,7 @@ namespace OIPD
                 }
                 if (odt.Rows.Count <= 0)
                 {
-                    lblOPDGeetanjaliPatients.InnerHtml = "<br /><b>Geetanjali<br />Patients<br />0 Patients</b><br /><br />";
+                    lblOPDGeetanjaliPatients.InnerHtml = "<br /><b>BanarasNeuro<br />Patients<br />0 Patients</b><br /><br />";
                     lblOPDAyushmanPatients.InnerHtml = "<br /><b>Ayushman<br />Patients<br />0 Patients</b><br /><br />";
                     lblOPDCashlessPatients.InnerHtml = "<br /><b>Cashless<br />Patients<br />0 Patients</b><br /><br />";
                     return;
@@ -102,7 +102,7 @@ namespace OIPD
                     else
                         cashCounter++;
                 }
-                lblOPDGeetanjaliPatients.InnerHtml = "<br /><b>Geetanjali<br>Patients<br />" + geetaCounter + " Patients</b><br /><br />";
+                lblOPDGeetanjaliPatients.InnerHtml = "<br /><b>BanarasNeuro<br>Patients<br />" + geetaCounter + " Patients</b><br /><br />";
                 lblOPDAyushmanPatients.InnerHtml = "<br /><b>Ayushman<br>Patients<br />" + ayushCounter + " Patients</b><br /><br />";
                 lblOPDCashlessPatients.InnerHtml = "<br /><b>Cashless<br>Patients<br />" + cashCounter + " Patients</b><br /><br />";
             }
@@ -175,7 +175,7 @@ namespace OIPD
                 }
                 if (idt.Rows.Count <= 0)
                 {
-                    lblIPDGeetanjaliPatients.InnerHtml = "<br /><b>Geetanjali<br />Patients<br />0 Patients</b><br /><br />";
+                    lblIPDGeetanjaliPatients.InnerHtml = "<br /><b>BanarasNeuro<br />Patients<br />0 Patients</b><br /><br />";
                     lblIPDAyushmanPatients.InnerHtml = "<br /><b>Ayushman<br />Patients<br />0 Patients</b><br /><br />";
                     lblIPDCashlessPatients.InnerHtml = "<br /><b>Cashless<br />Patients<br />0 Patients</b><br /><br />";
                     return;
@@ -193,7 +193,7 @@ namespace OIPD
                     else
                         cashCounter++;
                 }
-                lblIPDGeetanjaliPatients.InnerHtml = "<br /><b>Geetanjali<br>Patients<br />" + geetaCounter + " Patients</b><br /><br />";
+                lblIPDGeetanjaliPatients.InnerHtml = "<br /><b>BanarasNeuro<br>Patients<br />" + geetaCounter + " Patients</b><br /><br />";
                 lblIPDAyushmanPatients.InnerHtml = "<br /><b>Ayushman<br>Patients<br />" + ayushCounter + " Patients</b><br /><br />";
                 lblIPDCashlessPatients.InnerHtml = "<br /><b>Cashless<br>Patients<br />" + cashCounter + " Patients</b><br /><br />";
             }
@@ -266,7 +266,7 @@ namespace OIPD
                 }
                 if (ddt.Rows.Count <= 0)
                 {
-                    lblDisGeetanjaliPatients.InnerHtml = "<br /><b>Geetanjali<br />Patients<br />0 Patients</b><br /><br />";
+                    lblDisGeetanjaliPatients.InnerHtml = "<br /><b>BanarasNeuro<br />Patients<br />0 Patients</b><br /><br />";
                     lblDisAyushmanPatients.InnerHtml = "<br /><b>Ayushman<br />Patients<br />0 Patients</b><br /><br />";
                     lblDisCashlessPatients.InnerHtml = "<br /><b>Cashless<br />Patients<br />0 Patients</b><br /><br />";
                     return;
@@ -284,7 +284,7 @@ namespace OIPD
                     else
                         cashCounter++;
                 }
-                lblDisGeetanjaliPatients.InnerHtml = "<br /><b>Geetanjali<br>Patients<br />" + geetaCounter + " Patients</b><br /><br />";
+                lblDisGeetanjaliPatients.InnerHtml = "<br /><b>BanarasNeuro<br>Patients<br />" + geetaCounter + " Patients</b><br /><br />";
                 lblDisAyushmanPatients.InnerHtml = "<br /><b>Ayushman<br>Patients<br />" + ayushCounter + " Patients</b><br /><br />";
                 lblDisCashlessPatients.InnerHtml = "<br /><b>Cashless<br>Patients<br />" + cashCounter + " Patients</b><br /><br />";
             }

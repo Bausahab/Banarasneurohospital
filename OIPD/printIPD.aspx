@@ -124,7 +124,7 @@
         <div>
         <center><label style="font-size:2">AN ISO : 9001:2015 CERTIFIED HOSPITAL</label><br/>
         <label style="font-size:2">Reged No. : CMO/HOP/21/MZP</label><br/>
-        <label class="w3-xlarge w3-center title"><b>Geetanjali Life Care & Surgical Pvt. Ltd. Trauma & Critical Care</b></label>
+        <label class="w3-xlarge w3-center title"><b>Banaras Neuro City Hospital</b></label>
         <!--<label class="w3-xlarge w3-center title"><b>गीतांजलि लाइफ केयर एंड सर्जिकल सेंटर ट्रामा एंड क्रिटिकल केयर</b></label>-->
         <br />
         <label class="w3-large w3-center">Mirzapur - Varanasi Road, Milkipur</label>

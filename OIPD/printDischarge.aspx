@@ -122,18 +122,17 @@
         <td colspan="1" class="w3-left"><img src="Resources/geetanjaliLogo.png" alt="hospital_logo" height="100" width="100" /></td>
         <td colspan="2">
         <div>
-        <center><label style="font-size:2">AN ISO : 9001:2015 CERTIFIED HOSPITAL</label><br/>
-        <label style="font-size:2">Reged No. : CMO/HOP/21/MZP</label><br/>
-        <label class="w3-xlarge w3-center title"><b>Geetanjali Life Care & Surgical Pvt. Ltd. Trauma & Critical Care</b></label>
-        <!--<label class="w3-xlarge w3-center title"><b>गीतांजलि लाइफ केयर एंड सर्जिकल सेंटर ट्रामा एंड क्रिटिकल केयर</b></label>-->
+        <center>
+        <label style="font-size:2">Reged No. : RMEE2235763</label><br/>
+        <label class="w3-xlarge w3-center title"><b>Banaras Neuro City Hospital</b></label>
         <br />
-        <label class="w3-large w3-center">Mirzapur - Varanasi Road, Milkipur</label>
+        <label class="w3-large w3-center">B37, 81-19 Ahilyabai Colony Bhogabir Lanka, Varanasi</label>
         <br />
-        <label class="w3-large w3-center">Uttar Pradesh 231305</label></center>
+        <label class="w3-large w3-center">Uttar Pradesh 221005</label></center>
         </div>
         </td>
-        <td colspan="1" class="w3-right"><b>Email -:</b><br/>geetanjalihospitalvns@gmail.com<br/>
-        <b>Phone -:</b><br/>9839980333,7565000033<br /><b>GSTIN -: </b>09AAHCG0111A1ZF
+        <td colspan="1" class="w3-right"><b>Email -:</b><br/>support@banarasneurohospital.com<br/>
+        <b>Contact(s) -:</b><br/>8299208005 , 9369074109<br />
         </td>
         </tr>
         </table>

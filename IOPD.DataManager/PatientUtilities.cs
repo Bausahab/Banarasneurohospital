@@ -99,21 +99,21 @@ namespace IOPD.DataManager
         public static int gettodaystotalopd()
         {
             DataSet1TableAdapters.opdformTableAdapter dt = new DataSet1TableAdapters.opdformTableAdapter();
-            DateTime today = System.DateTime.Now.AddHours(12.50);
+            DateTime today = System.DateTime.Now;
             int patients = Convert.ToInt32(dt.GetPatientCountByDate(today));
             return patients;
         }
         public static int gettodaystotalipd()
         {
             DataSet1TableAdapters.ipdformTableAdapter dt = new DataSet1TableAdapters.ipdformTableAdapter();
-            DateTime today = System.DateTime.Now.AddHours(12.50); ;
+            DateTime today = System.DateTime.Now ;
             int patients = Convert.ToInt32(dt.GetIpdCountByDate(today));
             return patients;
         }
         public static int gettodaystotaldischarge()
         {
             DataSet1TableAdapters.dischargeTableAdapter dt = new DataSet1TableAdapters.dischargeTableAdapter();
-            DateTime today = System.DateTime.Now.AddHours(12.50); ;
+            DateTime today = System.DateTime.Now ;
             int patients = Convert.ToInt32(dt.GetDischargeCountByDate(today));
             return patients;
         }
@@ -131,7 +131,7 @@ namespace IOPD.DataManager
             //DataSet1.opdformDataTable odt=ota.GetData();
             //DataSet1.opdformRow or=(DataSet1.opdformRow)odt.Rows[odt.Rows.Count-1];
             //DateTime dt=System.DateTime.Now;
-            return "GLC/" + dt.Year + "/" + (dt.Month) + "/" + dt.Day + "/" + ((int)ota.GetNewSnoWithIncreament() + 1);
+            return "BNCH/" + dt.Year + "/" + (dt.Month) + "/" + dt.Day + "/" + ((int)ota.GetNewSnoWithIncreament() + 1);
          
         }
       

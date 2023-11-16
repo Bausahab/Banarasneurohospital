@@ -18,6 +18,7 @@
                         <div style="border-style:solid; border-width:1px"></div>
                         <br />
                         <div class="w3-xlarge">
+                            
                             <asp:Label ID="ttlOpdPatient" runat="server" Font-Bold="true" Text="10<br />Patients"></asp:Label>
                         </div>
                         <br />

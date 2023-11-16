@@ -124,7 +124,7 @@
 <body>
     <form id="form1" runat="server">
     <div class="w3-center">
-    <table border="0" style="background-image:url('Resources/padNew.jpg'); height:1132px; width:800px; padding:0px; border-spacing:0px" class="invoice-box" cellpadding="0" cellspacing="0">
+    <table border="0" style="background-image:url('Resources/padNew.jpg'); height:1052px; width:735px; padding:0px; border-spacing:0px" class="invoice-box" cellpadding="0" cellspacing="0">
         <tr>
             <td style="height:175px">
              &nbsp;

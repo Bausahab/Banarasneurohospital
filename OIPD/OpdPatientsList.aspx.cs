@@ -17,9 +17,8 @@ namespace OIPD
                 return;
             if (!this.IsPostBack)
             {
-                txtStartDate.Text = DateUtilities.dateFormat("1-1-2018 12:00");
+                txtStartDate.Text = DateUtilities.dateFormat("1-1-2023 12:00");
                 DateTime dt = System.DateTime.Now;
-                dt = dt.AddHours(12.50);
                 txtEndDate.Text = "" + dt;
             }
             //Title = "" + RegistrationUtilities.GetRegistrationNo(5);

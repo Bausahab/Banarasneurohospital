@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
-using IOPD.DataManager;
+﻿using IOPD.DataManager;
+using System;
 
 namespace OIPD
 {
@@ -15,14 +10,16 @@ namespace OIPD
             /*bool b = LoginManager.ProtectPage(Session, Response);
             if (!b)
                 return;*/
-            string dname = "";
-            if (Request.QueryString["docname"] != null || (Request.QueryString["docname"]).Trim() != "")
-            {
-                dname = Request.QueryString["docname"];
-                lblDocName.Text = "Doctor Name: &nbsp;<b>" + dname + "</b>";
-            }
-            else
-                lblDocName.Text = "&nbsp;";
+            string dname = string.Empty;
+            dname = "_";
+            lblDocName.Text = "Doctor Name: &nbsp;<b>" + dname + "</b>";
+            //if (Request.QueryString["docname"] != null || (Request.QueryString["docname"]).Trim() != "")
+            //{
+            //    //dname = "_";
+            //    //lblDocName.Text = "Doctor Name: &nbsp;<b>" + dname + "</b>";
+            //}
+            //else
+            lblDocName.Text = "&nbsp;";
             int sno = Convert.ToInt32(Request.QueryString["sno"]);
             if (sno == 0)
                 return;

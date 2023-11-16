@@ -139,7 +139,7 @@
                                                 <div style="font-size:0.58em; margin-bottom:-8px; margin-top:-10px">Reged No. : CMO/HOP/21/MZP</div>
                                             </div>
                                         </div>
-                                        <div style="font-size:1em; color:#CC4400; margin-bottom:-3px;" class="w3-center title"><b>Geetanjali Life Care & Surgical</b></div>
+                                        <div style="font-size:1em; color:#CC4400; margin-bottom:-3px;" class="w3-center title"><b>Banaras Neuro City Hospital</b></div>
                                         <div style="font-size:0.9em; color:#CC4400; margin-bottom:-7px;" class="w3-center title"><b>Pvt. Ltd. | Trauma & Critical Care</b></div>
                                         <div style="font-size:0.540em; margin-bottom:-15px;" class="w3-center"><b>Mirzapur - Varanasi Road, Milkipur | Uttar Pradesh 231305</b></div>
                                     </center>
