@@ -12,18 +12,26 @@ namespace OIPD
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            //bool b = LoginManager.ProtectPage(Session, Response);
-            //if (!b)
-            //    return;
-            //int opd = 10; /*PatientUtilities.gettodaystotalopd();*/
-            //int ipd = PatientUtilities.gettodaystotalipd();
-            //int discharge = PatientUtilities.gettodaystotaldischarge();
-            //int beds = PatientUtilities.gettotalemptybeds();
-            //int totalbeds = bedUtilities.totalbeds();
-            //ttlOpdPatient.Text = opd + "<br />Patients";
-            //ttlIpdPatient.Text = ipd + "<br />Patients";
-            //ttlDischargePatient.Text = discharge + "<br />Patients";
-            //ttlEmptyBeds.Text = beds + "/" + totalbeds + "<br />Empty Beds";
+            bool b = LoginManager.ProtectPage(Session, Response);
+            if (!b)
+                return;
+
+            try
+            {
+                int opd = PatientUtilities.gettodaystotalopd();
+                int ipd = PatientUtilities.gettodaystotalipd();
+                int discharge = PatientUtilities.gettodaystotaldischarge();
+                int beds = PatientUtilities.gettotalemptybeds();
+                int totalbeds = bedUtilities.totalbeds();
+                ttlOpdPatient.Text = opd + "<br />Patients";
+                ttlIpdPatient.Text = ipd + "<br />Patients";
+                ttlDischargePatient.Text = discharge + "<br />Patients";
+                ttlEmptyBeds.Text = beds + "/" + totalbeds + "<br />Empty Beds";
+            }
+            catch(Exception yy)
+            {
+                throw new Exception(yy.Message);
+            }
         }
     }
 }
