@@ -96,7 +96,8 @@
     <div class="w3-col s6 w3-mobile w3-padding  ">
     <p>  
       <asp:Label CssClass="w3-large w3-text-blue" Width="100%" ID="lbldate" runat="server" Text="Date"></asp:Label>
-        <asp:TextBox CssClass="w3-sand w3-round w3-input w3-border" ID="txtdate" runat="server"  TabIndex="1"></asp:TextBox>    
+        <asp:Calendar CssClass="w3-sand w3-round w3-input w3-border" ID="cal1" runat="server" TabIndex="1" SelectedDate="<%# DateTime.Today %>"></asp:Calendar>
+       <%-- <asp:TextBox CssClass="w3-sand w3-round w3-input w3-border" ID="txtdate" runat="server"  TabIndex="1"></asp:TextBox>    --%>
       <asp:Label CssClass="w3-large w3-text-blue" ID="lbllastname" runat="server" Text="Last Name"></asp:Label>
         <asp:TextBox CssClass=" w3-round w3-sand w3-input w3-border" ID="txtlastname" runat="server"  TabIndex="4"></asp:TextBox>
           <asp:Label CssClass="w3-large w3-text-blue" ID="lblgender" runat="server" Text="Gender" ></asp:Label><br />

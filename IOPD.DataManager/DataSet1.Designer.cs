@@ -20398,8 +20398,8 @@ namespace IOPD.DataManager.DataSet1TableAdapters {
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@sno", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "sno", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[3].Connection = this.Connection;
-            this._commandCollection[3].CommandText = "SELECT        COUNT(*) AS Expr1\r\nFROM            hospitals.bedmaster\r\nWHERE      " +
-                "  (patientno = \'1\')";
+            this._commandCollection[3].CommandText = "SELECT        COUNT(bedno) AS Expr1\r\nFROM            hospitals.bedmaster\r\nWHERE  " +
+                "      (patientno = 1)";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[4].Connection = this.Connection;
@@ -20477,17 +20477,6 @@ namespace IOPD.DataManager.DataSet1TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual DataSet1.bedmasterDataTable GetEmptyBedsCount() {
-            this.Adapter.SelectCommand = this.CommandCollection[3];
-            DataSet1.bedmasterDataTable dataTable = new DataSet1.bedmasterDataTable();
-            this.Adapter.Fill(dataTable);
-            return dataTable;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual DataSet1.bedmasterDataTable GetVacantBedByRoomNo(int roomno) {
             this.Adapter.SelectCommand = this.CommandCollection[4];
             this.Adapter.SelectCommand.Parameters[0].Value = ((int)(roomno));
@@ -20523,6 +20512,34 @@ namespace IOPD.DataManager.DataSet1TableAdapters {
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         public virtual int Update(global::System.Data.DataRow[] dataRows) {
             return this.Adapter.Update(dataRows);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual global::System.Nullable<int> GetEmptyBedsCount() {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[3];
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            object returnValue;
+            try {
+                returnValue = command.ExecuteScalar();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            if (((returnValue == null) 
+                        || (returnValue.GetType() == typeof(global::System.DBNull)))) {
+                return new global::System.Nullable<int>();
+            }
+            else {
+                return new global::System.Nullable<int>(((int)(returnValue)));
+            }
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -22429,12 +22446,9 @@ WHERE  (dateofdischarge >= @fromdate) AND (dateofdischarge <= @todate)";
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@todate", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "dateofdischarge", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[3].Connection = this.Connection;
-            this._commandCollection[3].CommandText = @"SELECT        sno, patientno, dateofdischarge, approved, reason, furthertreatment, dischargingphysician, currentuser, chiefComplaint, physicalFindings, investigation, treatement, operation, biopsyReport, finalDiagonosis, result, instruction, 
-                         dischargemedicine
-FROM            hospitals.discharge
-WHERE        (dateofdischarge = @dateofdischarge)";
+            this._commandCollection[3].CommandText = "SELECT        COUNT(patientno) AS Expr1\r\nFROM            hospitals.discharge\r\nWHE" +
+                "RE        (dateofdischarge = CAST(GETDATE() AS Date))";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dateofdischarge", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "dateofdischarge", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[4].Connection = this.Connection;
             this._commandCollection[4].CommandText = @"INSERT INTO hospitals.discharge
@@ -22500,18 +22514,6 @@ VALUES (@patientno,@dateofdischarge,@approved,@reason,@furthertreatment,@dischar
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual DataSet1.dischargeDataTable GetDischargeCountByDate(System.DateTime dateofdischarge) {
-            this.Adapter.SelectCommand = this.CommandCollection[3];
-            this.Adapter.SelectCommand.Parameters[0].Value = ((System.DateTime)(dateofdischarge));
-            DataSet1.dischargeDataTable dataTable = new DataSet1.dischargeDataTable();
-            this.Adapter.Fill(dataTable);
-            return dataTable;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         public virtual int Update(DataSet1.dischargeDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
@@ -22536,6 +22538,34 @@ VALUES (@patientno,@dateofdischarge,@approved,@reason,@furthertreatment,@dischar
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         public virtual int Update(global::System.Data.DataRow[] dataRows) {
             return this.Adapter.Update(dataRows);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual global::System.Nullable<int> GetDischargeCountByDate() {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[3];
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            object returnValue;
+            try {
+                returnValue = command.ExecuteScalar();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            if (((returnValue == null) 
+                        || (returnValue.GetType() == typeof(global::System.DBNull)))) {
+                return new global::System.Nullable<int>();
+            }
+            else {
+                return new global::System.Nullable<int>(((int)(returnValue)));
+            }
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -24211,16 +24241,15 @@ FROM            hospitals.fieldAgents";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT sno, patientno, dateofentry, bedno, comments, doctorno, currentuser\r\nFROM " +
-                "    hospitals.ipdform\r\nWHERE  (patientno = @patientno)";
+            this._commandCollection[1].CommandText = "SELECT        sno, patientno, dateofentry, bedno, comments, doctorno, currentuser" +
+                "\r\nFROM            hospitals.ipdform\r\nWHERE        (patientno = @patientno)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@patientno", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "patientno", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "SELECT        sno, patientno, dateofentry, bedno, comments, doctorno, currentuser" +
-                "\r\nFROM            hospitals.ipdform\r\nWHERE        (dateofentry = @dateofentry)";
+            this._commandCollection[2].CommandText = "SELECT        COUNT(patientno) AS Expr1\r\nFROM            hospitals.ipdform\r\nWHERE" +
+                "        (dateofentry = CAST(GETDATE() AS date))";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dateofentry", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "dateofentry", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[3].Connection = this.Connection;
             this._commandCollection[3].CommandText = "SELECT sno, patientno, dateofentry, bedno, comments, doctorno, currentuser\r\nFROM " +
@@ -24290,18 +24319,6 @@ FROM            hospitals.fieldAgents";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual DataSet1.ipdformDataTable GetIpdCountByDate(System.DateTime dateofentry) {
-            this.Adapter.SelectCommand = this.CommandCollection[2];
-            this.Adapter.SelectCommand.Parameters[0].Value = ((System.DateTime)(dateofentry));
-            DataSet1.ipdformDataTable dataTable = new DataSet1.ipdformDataTable();
-            this.Adapter.Fill(dataTable);
-            return dataTable;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual DataSet1.ipdformDataTable GetPatientsWithinDate(System.DateTime fromdate, System.DateTime todate) {
             this.Adapter.SelectCommand = this.CommandCollection[3];
             this.Adapter.SelectCommand.Parameters[0].Value = ((System.DateTime)(fromdate));
@@ -24338,6 +24355,34 @@ FROM            hospitals.fieldAgents";
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         public virtual int Update(global::System.Data.DataRow[] dataRows) {
             return this.Adapter.Update(dataRows);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual global::System.Nullable<int> GetIpdCountByDate() {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[2];
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            object returnValue;
+            try {
+                returnValue = command.ExecuteScalar();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            if (((returnValue == null) 
+                        || (returnValue.GetType() == typeof(global::System.DBNull)))) {
+                return new global::System.Nullable<int>();
+            }
+            else {
+                return new global::System.Nullable<int>(((int)(returnValue)));
+            }
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -24555,11 +24600,10 @@ FROM            hospitals.fieldAgents";
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [hospitals].[opdform] ([patientno], [departmentno], [dateofentry], [firstname], [lastname], [agemonths], [ageyears], [gender], [address], [fathername], [referredfrom], [mobileno], [title], [doctorno], [currentuser], [nextrenewdate], [totalrenews], [agedays], [patienttype], [ipnumber], [patientdata]) VALUES (@patientno, @departmentno, @dateofentry, @firstname, @lastname, @agemonths, @ageyears, @gender, @address, @fathername, @referredfrom, @mobileno, @title, @doctorno, @currentuser, @nextrenewdate, @totalrenews, @agedays, @patienttype, @ipnumber, @patientdata)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [hospitals].[opdform] ([departmentno], [dateofentry], [firstname], [lastname], [agemonths], [ageyears], [gender], [address], [fathername], [referredfrom], [mobileno], [title], [doctorno], [currentuser], [nextrenewdate], [totalrenews], [agedays], [patienttype], [ipnumber], [patientdata]) VALUES (@departmentno, @dateofentry, @firstname, @lastname, @agemonths, @ageyears, @gender, @address, @fathername, @referredfrom, @mobileno, @title, @doctorno, @currentuser, @nextrenewdate, @totalrenews, @agedays, @patienttype, @ipnumber, @patientdata)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@patientno", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "patientno", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@departmentno", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "departmentno", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dateofentry", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "dateofentry", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dateofentry", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "dateofentry", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@firstname", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "firstname", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@lastname", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "lastname", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@agemonths", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "agemonths", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -24593,24 +24637,16 @@ FROM            hospitals.fieldAgents";
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[8];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT        patientno, departmentno, dateofentry, firstname, lastname, agemonths, ageyears, gender, address, fathername, referredfrom, mobileno, title, doctorno, currentuser, nextrenewdate, totalrenews, agedays, patienttype, ipnumber, 
-                         patientdata
-FROM            hospitals.opdform";
+            this._commandCollection[0].CommandText = "SELECT        hospitals.opdform.*\r\nFROM            hospitals.opdform";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = @"SELECT        patientno, departmentno, dateofentry, firstname, lastname, agemonths, ageyears, gender, address, fathername, referredfrom, mobileno, title, doctorno, currentuser, nextrenewdate, totalrenews, agedays, patienttype, ipnumber, 
-                         patientdata
-FROM            hospitals.opdform
-WHERE        (patientno = @patientno)";
+            this._commandCollection[1].CommandText = @"SELECT address, agedays, agemonths, ageyears, currentuser, dateofentry, departmentno, doctorno, fathername, firstname, gender, ipnumber, lastname, mobileno, nextrenewdate, patientdata, patientno, patienttype, referredfrom, title, totalrenews FROM hospitals.opdform WHERE (patientno = @patientno)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@patientno", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "patientno", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = @"SELECT patientno, departmentno, dateofentry, firstname, lastname, agemonths, ageyears, gender, address, fathername, referredfrom, mobileno, title, doctorno, currentuser, nextrenewdate, totalrenews, agedays, patienttype, ipnumber, 
-                  patientdata
-FROM     hospitals.opdform
-WHERE  (dateofentry >= @fromdate) AND (dateofentry <= @todate)";
+            this._commandCollection[2].CommandText = @"SELECT address, agedays, agemonths, ageyears, currentuser, dateofentry, departmentno, doctorno, fathername, firstname, gender, ipnumber, lastname, mobileno, nextrenewdate, patientdata, patientno, patienttype, referredfrom, title, totalrenews FROM hospitals.opdform WHERE (dateofentry >= @fromdate) AND (dateofentry <= @todate)";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@fromdate", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "dateofentry", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@todate", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "dateofentry", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -24620,10 +24656,9 @@ WHERE  (dateofentry >= @fromdate) AND (dateofentry <= @todate)";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[4].Connection = this.Connection;
-            this._commandCollection[4].CommandText = "SELECT        COUNT(*) AS Expr1\r\nFROM            hospitals.opdform\r\nWHERE        " +
-                "(dateofentry = @dateofentry)";
+            this._commandCollection[4].CommandText = "SELECT        COUNT(patientno) AS Expr1\r\nFROM            hospitals.opdform\r\nWHERE" +
+                "        (dateofentry = CAST(GETDATE() AS Date))";
             this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dateofentry", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "dateofentry", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[5] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[5].Connection = this.Connection;
             this._commandCollection[5].CommandText = @"INSERT INTO hospitals.opdform
@@ -24719,18 +24754,6 @@ VALUES        (@departmentno,@dateofentry,@firstname,@lastname,@agemonths,@ageye
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual DataSet1.opdformDataTable GetPatientCountByDate(System.DateTime dateofentry) {
-            this.Adapter.SelectCommand = this.CommandCollection[4];
-            this.Adapter.SelectCommand.Parameters[0].Value = ((System.DateTime)(dateofentry));
-            DataSet1.opdformDataTable dataTable = new DataSet1.opdformDataTable();
-            this.Adapter.Fill(dataTable);
-            return dataTable;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         public virtual int Update(DataSet1.opdformDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
@@ -24782,6 +24805,34 @@ VALUES        (@departmentno,@dateofentry,@firstname,@lastname,@agemonths,@ageye
             }
             else {
                 return ((object)(returnValue));
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual global::System.Nullable<int> GetPatientCountByDate() {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[4];
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            object returnValue;
+            try {
+                returnValue = command.ExecuteScalar();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            if (((returnValue == null) 
+                        || (returnValue.GetType() == typeof(global::System.DBNull)))) {
+                return new global::System.Nullable<int>();
+            }
+            else {
+                return new global::System.Nullable<int>(((int)(returnValue)));
             }
         }
         

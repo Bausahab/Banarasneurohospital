@@ -99,28 +99,27 @@ namespace IOPD.DataManager
         public static int gettodaystotalopd()
         {
             DataSet1TableAdapters.opdformTableAdapter dt = new DataSet1TableAdapters.opdformTableAdapter();
-            DateTime today = System.DateTime.Now;
-            int patients = Convert.ToInt32(dt.GetPatientCountByDate(today));
+            var tt = dt.GetPatientCountByDate();
+            int patients = Convert.ToInt32(tt);
             return patients;
         }
         public static int gettodaystotalipd()
         {
             DataSet1TableAdapters.ipdformTableAdapter dt = new DataSet1TableAdapters.ipdformTableAdapter();
-            DateTime today = System.DateTime.Now ;
-            int patients = Convert.ToInt32(dt.GetIpdCountByDate(today));
+            
+            int patients = Convert.ToInt32(dt.GetIpdCountByDate());
             return patients;
         }
         public static int gettodaystotaldischarge()
         {
             DataSet1TableAdapters.dischargeTableAdapter dt = new DataSet1TableAdapters.dischargeTableAdapter();
-            DateTime today = System.DateTime.Now ;
-            int patients = Convert.ToInt32(dt.GetDischargeCountByDate(today));
+            
+            int patients = Convert.ToInt32(dt.GetDischargeCountByDate());
             return patients;
         }
         public static int gettotalemptybeds()
         {
             DataSet1TableAdapters.bedmasterTableAdapter dt = new DataSet1TableAdapters.bedmasterTableAdapter();
-            DateTime today = System.DateTime.Now;
             int beds = Convert.ToInt32(dt.GetEmptyBedsCount());
             return beds;
         }

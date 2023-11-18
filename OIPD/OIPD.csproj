@@ -791,6 +791,10 @@
       <Project>{fa234522-d22b-47d8-9c05-0caf7fd27b5d}</Project>
       <Name>IOPD.DataManager</Name>
     </ProjectReference>
+    <ProjectReference Include="..\MdbManager\MdbManager.csproj">
+      <Project>{533e4989-bf23-4421-b950-9954aaa3d3b6}</Project>
+      <Name>MdbManager</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />

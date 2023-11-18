@@ -203,12 +203,12 @@ WHERE        (sno = @sno)</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="IODatabaseConnectionString (Settings)" DbObjectType="Unknown" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="GetEmptyBedsCount" GetMethodModifier="Public" GetMethodName="GetEmptyBedsCount" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetEmptyBedsCount" UserSourceName="GetEmptyBedsCount">
+              <DbSource ConnectionRef="IODatabaseConnectionString (Settings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="GetEmptyBedsCount" Modifier="Public" Name="GetEmptyBedsCount" QueryType="Scalar" ScalarCallRetval="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="GetEmptyBedsCount">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        COUNT(*) AS Expr1
+                    <CommandText>SELECT        COUNT(bedno) AS Expr1
 FROM            hospitals.bedmaster
-WHERE        (patientno = '1')</CommandText>
+WHERE        (patientno = 1)</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -225,7 +225,7 @@ WHERE  (roomno = @roomno) AND (patientno = '1')</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="IODatabaseConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertQuery" Modifier="Public" Name="InsertQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="InsertQuery">
+              <DbSource ConnectionRef="IODatabaseConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertQuery" Modifier="Public" Name="InsertQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="InsertQuery">
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>INSERT INTO hospitals.bedmaster
@@ -240,7 +240,7 @@ VALUES (@roomno,@bedno,@patientno,@bedcharge)</CommandText>
                   </DbCommand>
                 </InsertCommand>
               </DbSource>
-              <DbSource ConnectionRef="IODatabaseConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdatedBedPatient" Modifier="Public" Name="UpdatedBedPatient" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="UpdatedBedPatient">
+              <DbSource ConnectionRef="IODatabaseConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdatedBedPatient" Modifier="Public" Name="UpdatedBedPatient" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="UpdatedBedPatient">
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>UPDATE       hospitals.bedmaster
@@ -666,20 +666,17 @@ WHERE  (dateofdischarge &gt;= @fromdate) AND (dateofdischarge &lt;= @todate)</Co
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="IODatabaseConnectionString (Settings)" DbObjectName="IODatabase.hospitals.discharge" DbObjectType="Table" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="GetDischargeCountByDate" GetMethodModifier="Public" GetMethodName="GetDischargeCountByDate" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDischargeCountByDate" UserSourceName="GetDischargeCountByDate">
+              <DbSource ConnectionRef="IODatabaseConnectionString (Settings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="GetDischargeCountByDate" Modifier="Public" Name="GetDischargeCountByDate" QueryType="Scalar" ScalarCallRetval="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="GetDischargeCountByDate">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        sno, patientno, dateofdischarge, approved, reason, furthertreatment, dischargingphysician, currentuser, chiefComplaint, physicalFindings, investigation, treatement, operation, biopsyReport, finalDiagonosis, result, instruction, 
-                         dischargemedicine
+                    <CommandText>SELECT        COUNT(patientno) AS Expr1
 FROM            hospitals.discharge
-WHERE        (dateofdischarge = @dateofdischarge)</CommandText>
-                    <Parameters>
-                      <Parameter AllowDbNull="false" AutogeneratedName="dateofdischarge" ColumnName="dateofdischarge" DataSourceName="IODatabase.hospitals.discharge" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@dateofdischarge" Precision="0" ProviderType="DateTime" Scale="0" Size="8" SourceColumn="dateofdischarge" SourceColumnNullMapping="false" SourceVersion="Current" />
-                    </Parameters>
+WHERE        (dateofdischarge = CAST(GETDATE() AS Date))</CommandText>
+                    <Parameters />
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="IODatabaseConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="Insert1" Modifier="Public" Name="Insert1" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="Insert1">
+              <DbSource ConnectionRef="IODatabaseConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="Insert1" Modifier="Public" Name="Insert1" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="Insert1">
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>INSERT INTO hospitals.discharge
@@ -1073,27 +1070,25 @@ FROM            hospitals.ipdform</CommandText>
               <Mapping SourceColumn="currentuser" DataSetColumn="currentuser" />
             </Mappings>
             <Sources>
-              <DbSource ConnectionRef="IODatabaseConnectionString (Settings)" DbObjectName="IODatabase.hospitals.ipdform" DbObjectType="Table" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByPatientNo" GetMethodModifier="Public" GetMethodName="GetDataByPatientNo" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByPatientNo" UserSourceName="GetDataByPatientNo">
-                <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT sno, patientno, dateofentry, bedno, comments, doctorno, currentuser
-FROM     hospitals.ipdform
-WHERE  (patientno = @patientno)</CommandText>
-                    <Parameters>
-                      <Parameter AllowDbNull="false" AutogeneratedName="patientno" ColumnName="patientno" DataSourceName="IODatabase.hospitals.ipdform" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@patientno" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="patientno" SourceColumnNullMapping="false" SourceVersion="Current" />
-                    </Parameters>
-                  </DbCommand>
-                </SelectCommand>
-              </DbSource>
-              <DbSource ConnectionRef="IODatabaseConnectionString (Settings)" DbObjectName="IODatabase.hospitals.ipdform" DbObjectType="Table" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="GetIpdCountByDate" GetMethodModifier="Public" GetMethodName="GetIpdCountByDate" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetIpdCountByDate" UserSourceName="GetIpdCountByDate">
+              <DbSource ConnectionRef="IODatabaseConnectionString (Settings)" DbObjectName="NiramayDB.hospitals.ipdform" DbObjectType="Table" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByPatientNo" GetMethodModifier="Public" GetMethodName="GetDataByPatientNo" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByPatientNo" UserSourceName="GetDataByPatientNo">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        sno, patientno, dateofentry, bedno, comments, doctorno, currentuser
 FROM            hospitals.ipdform
-WHERE        (dateofentry = @dateofentry)</CommandText>
+WHERE        (patientno = @patientno)</CommandText>
                     <Parameters>
-                      <Parameter AllowDbNull="false" AutogeneratedName="dateofentry" ColumnName="dateofentry" DataSourceName="IODatabase.hospitals.ipdform" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@dateofentry" Precision="0" ProviderType="DateTime" Scale="0" Size="8" SourceColumn="dateofentry" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="patientno" ColumnName="patientno" DataSourceName="NiramayDB.hospitals.ipdform" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@patientno" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="patientno" SourceColumnNullMapping="false" SourceVersion="Current" />
                     </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="IODatabaseConnectionString (Settings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="GetIpdCountByDate" Modifier="Public" Name="GetIpdCountByDate" QueryType="Scalar" ScalarCallRetval="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="GetIpdCountByDate">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        COUNT(patientno) AS Expr1
+FROM            hospitals.ipdform
+WHERE        (dateofentry = CAST(GETDATE() AS date))</CommandText>
+                    <Parameters />
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
@@ -1110,7 +1105,7 @@ WHERE  (dateofentry = @fromdate) AND (dateofentry &lt;= @todate)</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="IODatabaseConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertQuery" Modifier="Public" Name="InsertQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="InsertQuery">
+              <DbSource ConnectionRef="IODatabaseConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertQuery" Modifier="Public" Name="InsertQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="InsertQuery">
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>INSERT INTO hospitals.ipdform
@@ -1127,7 +1122,7 @@ VALUES (@patientno,@dateofentry,@bedno,@comments,@doctorno,@currentuser)</Comman
                   </DbCommand>
                 </InsertCommand>
               </DbSource>
-              <DbSource ConnectionRef="IODatabaseConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateBedOnTransfer" Modifier="Public" Name="UpdateBedOnTransfer" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="UpdateBedOnTransfer">
+              <DbSource ConnectionRef="IODatabaseConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateBedOnTransfer" Modifier="Public" Name="UpdateBedOnTransfer" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="UpdateBedOnTransfer">
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>UPDATE hospitals.ipdform
@@ -1144,14 +1139,13 @@ WHERE  (patientno = @patientno)</CommandText>
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="opdformTableAdapter" GeneratorDataComponentClassName="opdformTableAdapter" Name="opdform" UserDataComponentName="opdformTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="IODatabaseConnectionString (Settings)" DbObjectName="IODatabase.hospitals.opdform" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="IODatabaseConnectionString (Settings)" DbObjectName="NiramayDB.hospitals.opdform" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>INSERT INTO [hospitals].[opdform] ([patientno], [departmentno], [dateofentry], [firstname], [lastname], [agemonths], [ageyears], [gender], [address], [fathername], [referredfrom], [mobileno], [title], [doctorno], [currentuser], [nextrenewdate], [totalrenews], [agedays], [patienttype], [ipnumber], [patientdata]) VALUES (@patientno, @departmentno, @dateofentry, @firstname, @lastname, @agemonths, @ageyears, @gender, @address, @fathername, @referredfrom, @mobileno, @title, @doctorno, @currentuser, @nextrenewdate, @totalrenews, @agedays, @patienttype, @ipnumber, @patientdata)</CommandText>
+                    <CommandText>INSERT INTO [hospitals].[opdform] ([departmentno], [dateofentry], [firstname], [lastname], [agemonths], [ageyears], [gender], [address], [fathername], [referredfrom], [mobileno], [title], [doctorno], [currentuser], [nextrenewdate], [totalrenews], [agedays], [patienttype], [ipnumber], [patientdata]) VALUES (@departmentno, @dateofentry, @firstname, @lastname, @agemonths, @ageyears, @gender, @address, @fathername, @referredfrom, @mobileno, @title, @doctorno, @currentuser, @nextrenewdate, @totalrenews, @agedays, @patienttype, @ipnumber, @patientdata)</CommandText>
                     <Parameters>
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@patientno" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="patientno" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@departmentno" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="departmentno" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@dateofentry" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="dateofentry" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@dateofentry" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="dateofentry" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@firstname" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="firstname" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@lastname" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="lastname" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@agemonths" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="agemonths" SourceColumnNullMapping="false" SourceVersion="Current" />
@@ -1175,8 +1169,7 @@ WHERE  (patientno = @patientno)</CommandText>
                 </InsertCommand>
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        patientno, departmentno, dateofentry, firstname, lastname, agemonths, ageyears, gender, address, fathername, referredfrom, mobileno, title, doctorno, currentuser, nextrenewdate, totalrenews, agedays, patienttype, ipnumber, 
-                         patientdata
+                    <CommandText>SELECT        hospitals.opdform.*
 FROM            hospitals.opdform</CommandText>
                     <Parameters />
                   </DbCommand>
@@ -1207,26 +1200,20 @@ FROM            hospitals.opdform</CommandText>
               <Mapping SourceColumn="patientdata" DataSetColumn="patientdata" />
             </Mappings>
             <Sources>
-              <DbSource ConnectionRef="IODatabaseConnectionString (Settings)" DbObjectName="IODatabase.hospitals.opdform" DbObjectType="Table" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByPatientNo" GetMethodModifier="Public" GetMethodName="GetDataByPatientNo" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByPatientNo" UserSourceName="GetDataByPatientNo">
+              <DbSource ConnectionRef="IODatabaseConnectionString (Settings)" DbObjectName="NiramayDB.hospitals.opdform" DbObjectType="Table" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByPatientNo" GetMethodModifier="Public" GetMethodName="GetDataByPatientNo" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByPatientNo" UserSourceName="GetDataByPatientNo">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        patientno, departmentno, dateofentry, firstname, lastname, agemonths, ageyears, gender, address, fathername, referredfrom, mobileno, title, doctorno, currentuser, nextrenewdate, totalrenews, agedays, patienttype, ipnumber, 
-                         patientdata
-FROM            hospitals.opdform
-WHERE        (patientno = @patientno)</CommandText>
+                    <CommandText>SELECT address, agedays, agemonths, ageyears, currentuser, dateofentry, departmentno, doctorno, fathername, firstname, gender, ipnumber, lastname, mobileno, nextrenewdate, patientdata, patientno, patienttype, referredfrom, title, totalrenews FROM hospitals.opdform WHERE (patientno = @patientno)</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="false" AutogeneratedName="patientno" ColumnName="patientno" DataSourceName="IODatabase.hospitals.opdform" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@patientno" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="patientno" SourceColumnNullMapping="false" SourceVersion="Current" />
                     </Parameters>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="IODatabaseConnectionString (Settings)" DbObjectName="IODatabase.hospitals.opdform" DbObjectType="Table" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByWithinDateSpan" GetMethodModifier="Public" GetMethodName="GetDataByWithinDateSpan" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByWithinDateSpan" UserSourceName="GetDataByWithinDateSpan">
+              <DbSource ConnectionRef="IODatabaseConnectionString (Settings)" DbObjectName="NiramayDB.hospitals.opdform" DbObjectType="Table" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByWithinDateSpan" GetMethodModifier="Public" GetMethodName="GetDataByWithinDateSpan" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByWithinDateSpan" UserSourceName="GetDataByWithinDateSpan">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT patientno, departmentno, dateofentry, firstname, lastname, agemonths, ageyears, gender, address, fathername, referredfrom, mobileno, title, doctorno, currentuser, nextrenewdate, totalrenews, agedays, patienttype, ipnumber, 
-                  patientdata
-FROM     hospitals.opdform
-WHERE  (dateofentry &gt;= @fromdate) AND (dateofentry &lt;= @todate)</CommandText>
+                    <CommandText>SELECT address, agedays, agemonths, ageyears, currentuser, dateofentry, departmentno, doctorno, fathername, firstname, gender, ipnumber, lastname, mobileno, nextrenewdate, patientdata, patientno, patienttype, referredfrom, title, totalrenews FROM hospitals.opdform WHERE (dateofentry &gt;= @fromdate) AND (dateofentry &lt;= @todate)</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="false" AutogeneratedName="fromdate" ColumnName="dateofentry" DataSourceName="IODatabase.hospitals.opdform" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@fromdate" Precision="0" ProviderType="DateTime" Scale="0" Size="8" SourceColumn="dateofentry" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="false" AutogeneratedName="todate" ColumnName="dateofentry" DataSourceName="IODatabase.hospitals.opdform" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@todate" Precision="0" ProviderType="DateTime" Scale="0" Size="8" SourceColumn="dateofentry" SourceColumnNullMapping="false" SourceVersion="Current" />
@@ -1243,19 +1230,17 @@ FROM            hospitals.opdform</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="IODatabaseConnectionString (Settings)" DbObjectType="Unknown" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="GetPatientCountByDate" GetMethodModifier="Public" GetMethodName="GetPatientCountByDate" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetPatientCountByDate" UserSourceName="GetPatientCountByDate">
+              <DbSource ConnectionRef="IODatabaseConnectionString (Settings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="GetPatientCountByDate" Modifier="Public" Name="GetPatientCountByDate" QueryType="Scalar" ScalarCallRetval="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="GetPatientCountByDate">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        COUNT(*) AS Expr1
+                    <CommandText>SELECT        COUNT(patientno) AS Expr1
 FROM            hospitals.opdform
-WHERE        (dateofentry = @dateofentry)</CommandText>
-                    <Parameters>
-                      <Parameter AllowDbNull="false" AutogeneratedName="dateofentry" ColumnName="dateofentry" DataSourceName="IODatabase.hospitals.opdform" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@dateofentry" Precision="0" ProviderType="DateTime" Scale="0" Size="8" SourceColumn="dateofentry" SourceColumnNullMapping="false" SourceVersion="Current" />
-                    </Parameters>
+WHERE        (dateofentry = CAST(GETDATE() AS Date))</CommandText>
+                    <Parameters />
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="IODatabaseConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertQuery" Modifier="Public" Name="InsertQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="InsertQuery">
+              <DbSource ConnectionRef="IODatabaseConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertQuery" Modifier="Public" Name="InsertQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="InsertQuery">
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>INSERT INTO hospitals.opdform
@@ -1286,7 +1271,7 @@ VALUES        (@departmentno,@dateofentry,@firstname,@lastname,@agemonths,@ageye
                   </DbCommand>
                 </InsertCommand>
               </DbSource>
-              <DbSource ConnectionRef="IODatabaseConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateDepartmentByPatientNo" Modifier="Public" Name="UpdateDepartmentByPatientNo" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="UpdateDepartmentByPatientNo">
+              <DbSource ConnectionRef="IODatabaseConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateDepartmentByPatientNo" Modifier="Public" Name="UpdateDepartmentByPatientNo" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy3" UserSourceName="UpdateDepartmentByPatientNo">
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>UPDATE hospitals.opdform
@@ -1299,7 +1284,7 @@ WHERE  (patientno = @patientno)</CommandText>
                   </DbCommand>
                 </UpdateCommand>
               </DbSource>
-              <DbSource ConnectionRef="IODatabaseConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateRenewDate" Modifier="Public" Name="UpdateRenewDate" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy3" UserSourceName="UpdateRenewDate">
+              <DbSource ConnectionRef="IODatabaseConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateRenewDate" Modifier="Public" Name="UpdateRenewDate" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy4" UserSourceName="UpdateRenewDate">
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>UPDATE hospitals.opdform
