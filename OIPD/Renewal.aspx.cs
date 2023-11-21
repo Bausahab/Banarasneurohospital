@@ -10,6 +10,7 @@ namespace OIPD
 {
     public partial class Renewal : System.Web.UI.Page
     {
+       
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -17,7 +18,11 @@ namespace OIPD
             if (!b)
                 return;
 
+            //string pnme = Request.QueryString["patientname"].ToString();
+            //txtPatientNumber.Text = pnme;
+
         }
+       
         protected void searching(object sender, EventArgs e)
         {
         }
@@ -30,7 +35,7 @@ namespace OIPD
             DataSet1.opdformRow dr = (DataSet1.opdformRow)dt.Rows[0];
             DateTime renewDate = dr.nextrenewdate;
             DateTime dat = System.DateTime.Now;
-            dat = dat.AddHours(12.50);
+           // dat = dat.AddHours(12.50);
             bool b = renewDate < dat;
             //lblErrMsg.Text = System.DateTime.Now+" RenD="+ renewDate+" Val=" + b;
             if (b)
@@ -41,6 +46,11 @@ namespace OIPD
             {
                 lblErrMsg.Text = "This form is valid till " + DateUtilities.dateFormat(renewDate);
             }
+        }
+
+        protected void GridView1_PageIndexChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }

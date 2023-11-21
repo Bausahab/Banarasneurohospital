@@ -1,13 +1,13 @@
-﻿using System;
+﻿using IOPD.DataManager.Expense;
+using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using System.Data;
-using MdbManager.Expense;
 
-namespace OIPD.Expense
+namespace  OIPD.Expense
 {
     public partial class allhospitalincome : System.Web.UI.Page
     {
@@ -24,7 +24,7 @@ namespace OIPD.Expense
                 dt.Columns.Add("Amount");
                 dt.Columns.Add("View Details");
 
-                MdbManager.Expense.DataSet1TableAdapters.paymentsTableAdapter da = new MdbManager.Expense.DataSet1TableAdapters.paymentsTableAdapter();
+                IOPD.DataManager.Expense.DataSet1TableAdapters.paymentsTableAdapter da = new IOPD.DataManager.Expense.DataSet1TableAdapters.paymentsTableAdapter();
                 DataSet1.paymentsDataTable pdt = da.GetData();
                 DateTime lastDate = Convert.ToDateTime("1/1/1990");
                 int amount = 0;
@@ -76,7 +76,7 @@ namespace OIPD.Expense
                 dt.Columns.Add("Date");
                 dt.Columns.Add("Amount");
                 dt.Columns.Add("View Details");
-                MdbManager.Expense.DataSet1TableAdapters.paymentsTableAdapter da = new MdbManager.Expense.DataSet1TableAdapters.paymentsTableAdapter();
+                IOPD.DataManager.Expense.DataSet1TableAdapters.paymentsTableAdapter da = new IOPD.DataManager.Expense.DataSet1TableAdapters.paymentsTableAdapter();
                 DateTime date = Convert.ToDateTime(txtsearch.Text);
                 DataRow dr = dt.NewRow();
                 int amount = (int)da.GetTotalAmountByDate("" + date);

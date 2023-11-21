@@ -1,29 +1,25 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Expense/MasterPage.master" AutoEventWireup="true" CodeBehind="allexpenses.aspx.cs" Inherits="OIPD.Expense.allexpenses" %>
-
-<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Expense/MasterPage.Master" AutoEventWireup="true" CodeBehind="allexpenses.aspx.cs" Inherits="OIPD.Expense.allexpenses" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-<br />
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <br />
 <center><h2><b><u>Details</u></b></h2></center>
 <div class="w3-row">
 <div class="w3-col s1 w3-mobile">&nbsp;</div>
 <div class="w3-col s10 w3-padding w3-center w3-mobile">
     <asp:GridView ID="GridView1" Width="100%" 
         CssClass="w3-center w3-centered w3-table-all" runat="server" 
-        AutoGenerateColumns="False" CellPadding="4" DataKeyNames="sno" 
+        AutoGenerateColumns="False" CellPadding="4" 
         DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None" >
         <AlternatingRowStyle BackColor="White" />
         <Columns>
           
-            <asp:BoundField DataField="expenseon" HeaderText="Expense On" 
+            <asp:BoundField DataField="sno" HeaderText="sno" 
+                SortExpression="sno" InsertVisible="False" ReadOnly="True" />
+            <asp:BoundField DataField="expenseon" HeaderText="expenseon" 
                 SortExpression="expenseon" />
-            <asp:BoundField DataField="amount" HeaderText="Amount" 
-                SortExpression="amount" />
-                <asp:TemplateField HeaderText="Date">
-            <ItemTemplate>
-            <%#DateUtilties.FormattedDate(Convert.ToDateTime(Eval("date")))%>
-            </ItemTemplate>
-            </asp:TemplateField>
+                <asp:BoundField DataField="amount" HeaderText="amount" SortExpression="amount" />
+            <asp:BoundField DataField="date" HeaderText="date" SortExpression="date" />
            
         </Columns>
         <EditRowStyle BackColor="#2461BF" />
@@ -38,8 +34,8 @@
         <SortedDescendingHeaderStyle BackColor="#4870BE" />
         </asp:GridView>
         <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
-        ConnectionString="<%$ ConnectionStrings:expensegeetanjaliConnectionString %>" 
-        SelectCommand="SELECT * FROM [dailyexpences] WHERE ([date] = @date) ORDER BY [amount] DESC">
+        ConnectionString="<%$ ConnectionStrings:IODatabaseConnectionString %>" 
+        SelectCommand="SELECT sno, expenseon, amount, date FROM expense.dailyexpences WHERE (date = @date) ORDER BY amount DESC">
             <SelectParameters>
                 <asp:QueryStringParameter Name="date" QueryStringField="d" Type="DateTime" />
             </SelectParameters>
@@ -48,5 +44,5 @@
         </div>
         <div class="w3-col s1 w3-mobile">&nbsp;</div>
         </div>
-</asp:Content>
 
+</asp:Content>

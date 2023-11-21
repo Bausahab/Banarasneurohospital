@@ -1,9 +1,8 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Expense/MasterPage.master" AutoEventWireup="true" CodeBehind="allhospitalincome.aspx.cs" Inherits="OIPD.Expense.allhospitalincome" %>
-
-<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Expense/MasterPage.Master" AutoEventWireup="true" CodeBehind="allhospitalincome.aspx.cs" Inherits="OIPD.Expense.allhospitalincome" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-<div class="w3-row">
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <div class="w3-row">
 <center><h2><u>Payments From Hospital</u></h2></center>
 <div class="w3-col s1 w3-mobile">
 &nbsp;
@@ -63,6 +62,6 @@
              });
 
          });
-    </script>
-</asp:Content>
+     </script>
 
+</asp:Content>

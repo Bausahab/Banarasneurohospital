@@ -1,4 +1,5 @@
-﻿using MdbManager.Expense;
+﻿
+using IOPD.DataManager.Expense;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,7 +7,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace OIPD.Expense
+namespace  OIPD.Expense
 {
     public partial class ajaxreturntodayexpense : System.Web.UI.Page
     {
@@ -16,6 +17,7 @@ namespace OIPD.Expense
             double doctorpayment = ExpenseUtilities.GetTotalAmountPaidToDoctorByDate(System.DateTime.Now.AddHours(12.5));
             double totalexpense = dailyexpense + doctorpayment;
             Response.Write("" + totalexpense);
+
         }
     }
 }

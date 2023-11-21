@@ -13,11 +13,11 @@ namespace OIPD
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            /*bool b = LoginManager.ProtectPage(Session, Response);
+            bool b = LoginManager.ProtectPage(Session, Response);
             if (!b)
                 return;
-            if(!this.IsPostBack)*/
-            getPayablePatients();
+            if (!this.IsPostBack)
+                getPayablePatients();
         }
 
         public void getPayablePatients()
@@ -33,7 +33,7 @@ namespace OIPD
             dt.Columns.Add("Action");
             IOPD.DataManager.DataSet1TableAdapters.opdformTableAdapter ota = new IOPD.DataManager.DataSet1TableAdapters.opdformTableAdapter();
             DataSet1.opdformDataTable odt = ota.GetData();
-            for (int i = odt.Rows.Count - 1; i >= 0; i--)
+            for (int i = /*odt.Rows.Count*/ 11 - 1; i >= 0; i--)
             {
                 DataSet1.opdformRow or = (DataSet1.opdformRow)odt.Rows[i];
                 chargesUtilities.getAllChargesAtOnce(or.patientno, tempGrid);
@@ -53,6 +53,7 @@ namespace OIPD
                     dr[5] = p.ageyears + "Y " + p.agemonths + "M " + p.agedays + "D";
                     dr[6] = p.patientno;
                     dt.Rows.Add(dr);
+
                 }
             }
             GridView1.DataSource = dt;

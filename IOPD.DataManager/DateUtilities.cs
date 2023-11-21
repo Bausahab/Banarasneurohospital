@@ -70,7 +70,7 @@ namespace IOPD.DataManager
         {
             DateTime start = Convert.ToDateTime(startDate);
             DateTime today = System.DateTime.Now;
-            today = today.AddHours(12.50);
+            //today = today.AddHours(12.50);
             double total = (today - start).TotalDays;
             int tt = (int)total;
             return tt;

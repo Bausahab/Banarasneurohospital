@@ -48,7 +48,7 @@ namespace OIPD
                     throw new Exception("Enter renew date please");
                 IOPD.DataManager.DataSet1TableAdapters.opdformTableAdapter da = new IOPD.DataManager.DataSet1TableAdapters.opdformTableAdapter();
                 DateTime dt = System.DateTime.Now;
-                dt = dt.AddHours(12.50);
+               // dt = dt.AddHours(12.50);
                 DateTime date = Convert.ToDateTime((txtdate.Text) + " " + dt.Hour + ":" + dt.Minute + dt.ToString("tt"));
                 da.UpdateRenewDate(date.AddDays(15), (patient.totalrenews + 1), patient.patientno);
                 pri.Visible = true;

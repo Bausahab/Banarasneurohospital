@@ -276,6 +276,15 @@ namespace OIPD
         protected global::System.Web.UI.WebControls.Button HyperLink1;
 
         /// <summary>
+        /// btnreset control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink btnreset;
+
+        /// <summary>
         /// pri control.
         /// </summary>
         /// <remarks>
@@ -292,14 +301,5 @@ namespace OIPD
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HyperLink btnPrint;
-
-        /// <summary>
-        /// btnreset control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink btnreset;
     }
 }

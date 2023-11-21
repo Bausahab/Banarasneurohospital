@@ -4,15 +4,12 @@
 <div class="w3-row">
 <div class="w3-col s3"><br /></div>
 <div   class="w3-col s6 w3-center w3-padding w3-card-4 w3-centered w3-border">
-
-
 <center>
-  <div class="w3-container w3-deep-purple">
+    <div class="w3-container w3-deep-purple">
     <h2>EMERGENCY FORM</h2>
     <asp:Label ID="message" runat="server" Text=""></asp:Label>
     <asp:Label ID="ipNumber" runat="server" Text="" CssClass="w3-large" Font-Bold="true"></asp:Label>
   </div>
-
     <center>
         <div id="mod" class="w3-modal w3-padding">
             <br /><br /><br />
@@ -32,17 +29,13 @@
             runat="server" DataSourceID="SqlDataSource3" DataTextField="type_of_patient" DataValueField="sno" 
             RepeatDirection="Horizontal" Width="100%" AutoPostBack="True" 
             onselectedindexchanged="rdoLst_Click"></asp:RadioButtonList>
-        <asp:SqlDataSource ID="SqlDataSource3" runat="server"
-            ConnectionString="<%$ ConnectionStrings:IODatabaseConnectionString %>" 
-            SelectCommand="SELECT * FROM hospitals.patient_type"></asp:SqlDataSource>
+        <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:IODatabaseConnectionString %>" SelectCommand="SELECT * FROM hospitals.patient_type"></asp:SqlDataSource>
         <br />
     </div>
     <div id="tpaList" runat="server" class="w3-padding" visible="false">
         <asp:DropDownList ID="drpdwntpalist" runat="server" CssClass="w3-input w3-sand w3-border w3-round w3-col s4" DataSourceID="SqlDataSource4" DataTextField="tpaname" DataValueField="sno">
         </asp:DropDownList>
-        <asp:SqlDataSource ID="SqlDataSource4" runat="server" 
-            ConnectionString="<%$ ConnectionStrings:IODatabaseConnectionString %>" 
-            SelectCommand="SELECT * FROM hospitals.tpa ORDER BY [sno],[tpaname]"></asp:SqlDataSource>
+        <asp:SqlDataSource ID="SqlDataSource4" runat="server" ConnectionString="<%$ ConnectionStrings:IODatabaseConnectionString %>" SelectCommand="SELECT sno, tpaname FROM hospitals.tpa ORDER BY sno, tpaname"></asp:SqlDataSource>
         <div class="w3-col s4">&nbsp;</div>
         <div class="w3-center w3-col s4">
             <div class="w3-round-xxlarge w3-btn w3-purple" onclick="displayModal()"> ADD TPA </div>
@@ -58,7 +51,7 @@
     </script>
     <div class="w3-mobile w3-row">
     <div class="w3-col s6 w3-mobile w3-padding ">
-    <p>
+    
          <asp:Label CssClass="w3-large w3-text-blue" ID="lbldepartment" runat="server" Text="Consultant Department"></asp:Label>
         <asp:DropDownList CssClass="w3-input w3-sand w3-border w3-round" 
              ID="drpdwndepart" runat="server" DataSourceID="SqlDataSource1" 
@@ -68,9 +61,6 @@
          <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
              ConnectionString="<%$ ConnectionStrings:IODatabaseConnectionString %>" 
              SelectCommand="SELECT * FROM hospitals.departments">
-             <SelectParameters>
-                 <asp:Parameter DefaultValue="1" Name="departmentno" Type="Int32" />
-             </SelectParameters>
          </asp:SqlDataSource>
         <asp:Label CssClass="w3-large w3-text-blue" Width="100%" ID="lblfirstname" runat="server" Text="First Name"></asp:Label>
         <asp:DropDownList CssClass="w3-input w3-col s3 w3-round w3-sand w3-border w3-centered" ID="dropdowntitle" runat="server"  TabIndex="2">
@@ -82,8 +72,11 @@
         <asp:TextBox CssClass="w3-sand w3-col s9 w3-round w3-input w3-border" ID="txtfirstname" runat="server" TabIndex="3"></asp:TextBox>
         <asp:Label CssClass="w3-large w3-text-blue" ID="lblage" Width="100%" runat="server" Text="Age"></asp:Label>
         <asp:TextBox CssClass="w3-sand w3-round w3-col s4 w3-input w3-border" ID="txtYears" placeholder="Years" runat="server" TabIndex="5"></asp:TextBox>
-        <asp:TextBox CssClass="w3-sand w3-round w3-col s4 w3-input w3-border" ID="txtMonths" placeholder="Months" Text="0" runat="server" TabIndex="6"></asp:TextBox>
-        <asp:TextBox CssClass="w3-sand w3-round w3-col s4 w3-input w3-border" ID="txtDays" placeholder="Days" Text="0" runat="server" TabIndex="7"></asp:TextBox>
+        <asp:TextBox CssClass="w3-sand w3-round w3-col s4 w3-input w3-border w3-hide" ID="txtMonths"  Text="0" runat="server"  TabIndex="6"></asp:TextBox>
+        <asp:TextBox CssClass="w3-sand w3-round w3-col s4 w3-input w3-border  w3-hide" ID="txtDays"  Text="0" runat="server" TabIndex="7"></asp:TextBox>
+          <br/>
+         <br />
+         <br />
          <asp:Label CssClass="w3-large w3-text-blue" ID="lbladdress" runat="server" Text="Address"></asp:Label>
         <asp:TextBox CssClass=" w3-round w3-sand w3-input w3-border" ID="txtaddress" runat="server" TabIndex="9"></asp:TextBox>
         <asp:Label CssClass="w3-large w3-text-blue" ID="lblreffered" runat="server" Text="Reffered By"></asp:Label>
@@ -95,20 +88,17 @@
             <asp:ListItem Text="Self" Selected="True" Value="Self"></asp:ListItem>
             <asp:ListItem Text="Hospital" Value="Hospital"></asp:ListItem>
             <asp:ListItem Text="Doctor" Value="Doctor"></asp:ListItem>
+             <asp:ListItem Text="Person" Value="Person"></asp:ListItem>
         </asp:DropDownList>
 
         <asp:Label CssClass="w3-large w3-text-blue" ID="lblDocNumber" runat="server" Width="100%"    Text="Doctor's Number"></asp:Label>
         <asp:TextBox CssClass=" w3-round w3-sand w3-input w3-border" ID="txtDocNumber" runat="server" TabIndex="13"></asp:TextBox>
-    </p>
-
 
     </div>
-
-
     <div class="w3-col s6 w3-mobile w3-padding  ">
-    <p>  
+      
       <asp:Label CssClass="w3-large w3-text-blue" Width="100%" ID="lbldate" runat="server" Text="Date"></asp:Label>
-        <asp:TextBox CssClass="w3-sand w3-round w3-input w3-border" ID="txtdate" runat="server"  TabIndex="1"></asp:TextBox>    
+        <asp:TextBox CssClass="w3-sand w3-round w3-input w3-border" TextMode="Date" ID="txtdate" runat="server"  TabIndex="1"></asp:TextBox>    
       <asp:Label CssClass="w3-large w3-text-blue" ID="lbllastname" runat="server" Text="Last Name"></asp:Label>
         <asp:TextBox CssClass=" w3-round w3-sand w3-input w3-border" ID="txtlastname" runat="server"  TabIndex="4"></asp:TextBox>
           <asp:Label CssClass="w3-large w3-text-blue" ID="lblgender" runat="server" Text="Gender" ></asp:Label><br />
@@ -130,17 +120,16 @@
             ConnectionString="<%$ ConnectionStrings:IODatabaseConnectionString %>" 
             SelectCommand="SELECT * FROM hospitals.refferHospitals"></asp:SqlDataSource>
         
-        <asp:TextBox CssClass=" w3-round w3-sand w3-input w3-border" Width="100%" placeholder="Enter Doctor's Name" ID="txtreffered" runat="server" TabIndex="10"></asp:TextBox>
+        <asp:TextBox CssClass=" w3-round w3-sand w3-input w3-border" Width="100%" placeholder="Enter Name" ID="txtreffered" runat="server" TabIndex="10"></asp:TextBox>
 
         <asp:Label CssClass="w3-large w3-text-blue" Width="100%" ID="lblmobileno" runat="server" Text="Mobile No."></asp:Label>
         <asp:TextBox CssClass=" w3-round w3-sand w3-input w3-border" ID="txtnumber" runat="server"  TabIndex="13"></asp:TextBox>
         <asp:Label CssClass="w3-large w3-text-blue" ID="Label2" runat="server" Text="Amount"></asp:Label>
         <asp:TextBox CssClass=" w3-round w3-sand w3-input w3-border" ID="txtamount" Text="200" ReadOnly="false" runat="server"></asp:TextBox>
-        </p>
+        
   
     </div>
     </div>
-    
      </center>
     <div class="w3-row w3-mobile w3-center">
     <div class="w3-col s4">
@@ -158,16 +147,10 @@
     </div>
     </div>
    <br /> <br />
-     
-    
-  
 </div>
 </div>
  <br /> <br />
-
-
-
-         <script type="text/javascript">
+<script type="text/javascript">
              $(function () {
                  $(function () {
                      var currentYear = (new Date).getFullYear();
@@ -186,8 +169,5 @@
                  });
 
              });
-         </script>
-
-
-
+    </script>
 </asp:Content>

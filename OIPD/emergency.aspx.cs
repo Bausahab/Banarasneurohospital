@@ -152,7 +152,7 @@ namespace OIPD
                 btnPrint.Enabled = true;
 
                 DateTime dt = System.DateTime.Now;
-                dt = dt.AddHours(12.50);
+              //  dt = dt.AddHours(12.50);
                 DateTime date = Convert.ToDateTime((txtdate.Text) + " " + dt.Hour + ":" + dt.Minute + dt.ToString("tt"));
 
                 int patientType = Convert.ToInt32(rdoLst.SelectedValue);
@@ -293,6 +293,16 @@ namespace OIPD
                 lblHospital.Visible = true;
                 lblDocNumber.Visible = true;
                 lblDocNumber.Text = "Doctor's Number";
+                txtDocNumber.Visible = true;
+                txtDocNumber.Text = "";
+            }
+            if (drpdwnRef.SelectedIndex == 3)
+            {
+                drpdwnHospital.Visible = false;
+                txtreffered.Visible = true;
+                lblHospital.Visible = true;
+                lblDocNumber.Visible = true;
+                lblDocNumber.Text = "Person's Number";
                 txtDocNumber.Visible = true;
                 txtDocNumber.Text = "";
             }

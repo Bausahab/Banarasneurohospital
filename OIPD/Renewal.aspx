@@ -19,7 +19,7 @@
   <br />
   <div class="w3-row">
       <div class="w3-col s3"><br /></div>
-      <asp:TextBox ID="txtPatientNumber" runat="server" placeholder="Enter Patient Name" CssClass="w3-col s6 w3-center w3-input w3-padding"/><br />
+      <asp:TextBox ID="txtPatientNumber" runat="server" placeholder="Enter Patient Name or number" CssClass="w3-col s6 w3-center w3-input w3-padding"/><br />
   </div>
   <br />
   <asp:Button ID="btnSearch" class="w3-center w3-round-xxlarge w3-large w3-btn w3-teal"  runat="server" Text="Search" OnClick="searching"/>
@@ -28,7 +28,7 @@
     <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CssClass="w3-table-all"
          DataKeyNames="patientno" DataSourceID="SqlDataSource1" BackColor="White" 
          BorderColor="#999999" BorderStyle="None" BorderWidth="1px" CellPadding="3" 
-         GridLines="Vertical">
+         GridLines="Vertical" PagerSettings-Mode="NextPreviousFirstLast" OnPageIndexChanged="GridView1_PageIndexChanged">
         <AlternatingRowStyle BackColor="#DCDCDC" />
         <Columns>
             <asp:TemplateField HeaderText="Patient No">
@@ -79,7 +79,7 @@
      <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
          ConnectionString="<%$ ConnectionStrings:IODatabaseConnectionString %>" 
          
-         SelectCommand="SELECT * FROM hospitals.opdform WHERE ((firstname LIKE '%' + @firstname + '%') OR (lastname LIKE '%' + @lastname + '%')) AND (patientno > '1') ORDER BY patientno DESC">
+         SelectCommand="SELECT patientno, departmentno, dateofentry, firstname, lastname, ageyears, agemonths FROM hospitals.opdform WHERE (firstname LIKE '%' + @firstname + '%') AND (patientno &gt; '1') OR (patientno &gt; '1') AND (lastname LIKE '%' + @lastname + '%') ORDER BY patientno DESC">
          <SelectParameters>
              <asp:ControlParameter ControlID="txtPatientNumber" DefaultValue="%" 
                  Name="firstname" PropertyName="Text" Type="String" />

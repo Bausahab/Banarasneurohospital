@@ -249,13 +249,13 @@ namespace OIPD
         protected global::System.Web.UI.WebControls.Label lbldate;
 
         /// <summary>
-        /// cal1 control.
+        /// txtdate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Calendar cal1;
+        protected global::System.Web.UI.WebControls.TextBox txtdate;
 
         /// <summary>
         /// lbllastname control.

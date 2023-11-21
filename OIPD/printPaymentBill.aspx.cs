@@ -31,7 +31,7 @@ namespace OIPD
             IOPD.DataManager.DataSet1TableAdapters.paymentsTableAdapter pta = new IOPD.DataManager.DataSet1TableAdapters.paymentsTableAdapter();
             DataSet1.paymentsDataTable pdt = pta.GetDataByPatientno(sno);
             DateTime dt = System.DateTime.Now;
-            dt = dt.AddHours(12.50);
+           // dt = dt.AddHours(12.50);
             string lastPaymentDate = "" + dt;
 
             lblfirstname.Text = patient.firstname;

@@ -42,7 +42,7 @@
     </asp:GridView>
     <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
         ConnectionString="<%$ ConnectionStrings:IODatabaseConnectionString %>" 
-        SelectCommand="SELECT * FROM hospitals.opdform WHERE ((([firstname] LIKE '%' + @firstname + '%') OR ([lastname] LIKE '%' + @lastname + '%')) AND ([patientno]>'1')) OR  (patientno IN (SELECT patientno FROM currentbedpatients)) OR (patientno NOT IN (SELECT p.patientno FROM payments AS p INNER JOIN expenses AS e ON p.patientno = e.patientno GROUP BY p.patientno HAVING (SUM(p.amount) <> SUM(e.amount)))) ORDER BY [patientno] DESC">
+        SelectCommand="SELECT patientno, departmentno, dateofentry, firstname, lastname, agemonths, ageyears, gender, address, fathername, referredfrom, mobileno, title, doctorno, currentuser, nextrenewdate, totalrenews, agedays, patienttype, ipnumber, patientdata FROM hospitals.opdform WHERE (firstname LIKE '%' + @firstname + '%') AND (patientno &gt; '1') OR (patientno &gt; '1') AND (lastname LIKE '%' + @lastname + '%') OR (patientno IN (SELECT patientno FROM hospitals.currentbedpatients)) OR (patientno NOT IN (SELECT p.patientno FROM hospitals.payments AS p INNER JOIN hospitals.expenses AS e ON p.patientno = e.patientno GROUP BY p.patientno HAVING (SUM(p.amount) &lt;&gt; SUM(e.amount)))) ORDER BY patientno DESC">
         <SelectParameters>
             <asp:ControlParameter ControlID="txtPatientNumber" DefaultValue="%" 
                 Name="firstname" PropertyName="Text" Type="String" />

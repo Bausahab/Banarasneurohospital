@@ -145,41 +145,39 @@
             </div>
         </div>
     </div>
-    <div class="w3-center w3-col s6">
+    <div class="w3-center">
+        <br />
+        <br />
         <asp:Button ID="bttnShowPay" runat="server" OnClick="showPaymentsOption" Text="Accept Payments" Visible="true" CssClass="w3-purple w3-round-xxlarge w3-xlarge w3-center" />
         <div class="w3-row" id="paymentOptions" visible="false" runat="server">
-            <div class="w3-col s3"><br /></div>
-            <div class="w3-col s6">
+            <div class="w3-col s3"><br />
+          
                 <asp:Label ID="lblErr" runat="server"></asp:Label><br /><br />
                 <asp:Label ID="lbldate" runat="server" CssClass="w3-col s6 w3-large"><b>Date  -: </b></asp:Label>
-                <asp:TextBox ID="txtDate" runat="server" CssClass="w3-col s6 w3-input w3-sand" placeholder="Enter date"></asp:TextBox>
-                <br /><br />
+                <asp:TextBox ID="txtDate" runat="server" TextMode="Date" CssClass="w3-col s6 w3-input w3-sand" placeholder="Enter date"></asp:TextBox>
                 <asp:Label ID="lblAmt" runat="server" CssClass="w3-col s6 w3-large"><b>Amount  -: </b></asp:Label>
                 <asp:TextBox ID="txtAmount" runat="server" CssClass="w3-col s6 w3-input w3-sand" placeholder="Enter amount received"></asp:TextBox>
-                <br /><br />
                 <asp:Label ID="lblComents" runat="server" CssClass="w3-col s6 w3-large"><b>Description -: </b></asp:Label>
                 <asp:TextBox ID="txtComments" runat="server" CssClass="w3-col s6 w3-input w3-sand" placeholder="Comments please"></asp:TextBox>
-                <br /><br />
                 <asp:Label ID="lblMode" runat="server" CssClass="w3-col s6 w3-large"><b>Mode of Payment  -: </b></asp:Label>
                 <asp:DropDownList ID="drpdwnMode" runat="server" CssClass="w3-col s6 w3-input w3-sand" onselectedindexchanged="drpdwnMode_SelectedIndexChanged" AutoPostBack="true">
                     <asp:ListItem Selected="True" Text="----Select Mode of Payment----" Value="default"></asp:ListItem>
-                    <asp:ListItem Text="By Cash" Value="Cash"></asp:ListItem>
-                    <asp:ListItem Text="By Cheque" Value="Cheque"></asp:ListItem>
-                    <asp:ListItem Text="By Credit Card" Value="Credit Card"></asp:ListItem>
-                    <asp:ListItem Text="By Debit Card" Value="Debit Card"></asp:ListItem>
+                    <asp:ListItem Text="Cash" Value="Cash"></asp:ListItem>
+                    <asp:ListItem Text="Cheque" Value="Cheque"></asp:ListItem>
+                    <asp:ListItem Text="Credit Card" Value="Credit Card"></asp:ListItem>
+                    <asp:ListItem Text="Debit Card/UPI" Value="Debit Card"></asp:ListItem>
                 </asp:DropDownList>
-                <br /><br />
                 <asp:Label ID="lblModeData" runat="server" Visibl="false" CssClass="w3-col s6 w3-large"></asp:Label>
                 <asp:TextBox ID="txtModeData" runat="server" Visible="false" CssClass="w3-col s6 w3-input w3-sand"></asp:TextBox>
-                <br /><br />
                 <asp:Button ID="bttnAccept" OnClick="checkData" runat="server" Text="Accept" CssClass="w3-purple w3-round-xxlarge w3-xlarge w3-center" />
                 <asp:Button ID="bttnCancel" OnClick="reset" runat="server" Text="Cancel" CssClass="w3-purple w3-round-xxlarge w3-xlarge w3-center" />
+           
+
             </div>
         </div>
-        <div class="w3-center">
+        <div class="w3-center w3-col s6">
             <asp:HyperLink ID="bttnPrintBill" Target="_blank" Visible="false" runat="server" CssClass="w3-purple w3-round-xxlarge w3-xlarge w3-center" Text="&nbsp;&nbsp;Print Bill&nbsp;&nbsp;"></asp:HyperLink>
         </div>
-        <br /><br />
     </div>
 </div>
 </div>

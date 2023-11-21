@@ -58,6 +58,23 @@
     <Compile Include="DepartmentValidation.cs" />
     <Compile Include="dischargeUtilities.cs" />
     <Compile Include="expenses.cs" />
+    <Compile Include="Expense\Class1.cs" />
+    <Compile Include="Expense\DataSet1.cs">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Expense\DataSet1.Designer.cs">
+      <DependentUpon>DataSet1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Expense\DateUtilities.cs" />
+    <Compile Include="Expense\DepartmentUtilities.cs" />
+    <Compile Include="Expense\EmployeeUtilities.cs" />
+    <Compile Include="Expense\ExpenseUtilities.cs" />
+    <Compile Include="Expense\HoldAmountUtilities.cs" />
+    <Compile Include="Expense\LoanUtilities.cs" />
+    <Compile Include="Expense\LoginManager.cs" />
+    <Compile Include="Expense\PatientTestUtilities.cs" />
+    <Compile Include="Expense\PatientUtilities.cs" />
+    <Compile Include="Expense\refferedutilities.cs" />
     <Compile Include="filterUtils.cs" />
     <Compile Include="imgUtilities.cs" />
     <Compile Include="LoginManager.cs" />
@@ -91,6 +108,14 @@
     <None Include="DataSet1.xss">
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </None>
+    <None Include="Expense\DataSet1.xsc">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="Expense\DataSet1.xsd" />
+    <None Include="Expense\DataSet1.xss">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="Expense\Web.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

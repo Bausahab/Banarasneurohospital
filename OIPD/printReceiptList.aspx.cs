@@ -19,7 +19,7 @@ namespace OIPD
             {
                 txtStartDate.Text = DateUtilities.dateFormat("1-1-2018 12:00");
                 DateTime dt = System.DateTime.Now;
-                dt = dt.AddHours(12.50);
+              //  dt = dt.AddHours(12.50);
                 txtEndDate.Text = "" + dt;
             }
         }

@@ -164,10 +164,7 @@ namespace OIPD
                 bttnCancel.Text = "Home";
                 bttnPrintBill.Visible = true;
 
-                DateTime dat = System.DateTime.Now;
-                dat = dat.AddHours(12.50);
-                DateTime dt = Convert.ToDateTime((txtDate.Text) + " " + dat.Hour + ":" + dat.Minute + dat.ToString("tt"));
-
+                DateTime dt = Convert.ToDateTime(txtDate.Text);
                 addToPayments(Convert.ToInt32("" + Request.QueryString["patientno"]), dt, Convert.ToInt32("" + txtAmount.Text), txtComments.Text, "" + drpdwnMode.SelectedValue, txtModeData.Text);
 
                 GridView.DataBind();
@@ -238,10 +235,10 @@ namespace OIPD
             else if (x == 4)
             {
                 lblModeData.Visible = true;
-                lblModeData.Text = "<b>Debit Card Number</b>";
+                lblModeData.Text = "<b>Debit Card/UPI Trans Number</b>";
                 txtModeData.Visible = true;
                 txtModeData.Text = "";
-                txtModeData.Attributes.Add("placeholder", "Enter Debit Card Number");
+                txtModeData.Attributes.Add("placeholder", "Debit Card/UPI Trans Number");
             }
             string discountcomment = txtDiscComment.Text.ToString();
         }

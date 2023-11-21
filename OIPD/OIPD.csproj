@@ -105,6 +105,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
+    <Content Include="allhospitalincome.aspx" />
     <Content Include="bedmaster.aspx" />
     <Content Include="ChangeDepartment.aspx" />
     <Content Include="ChangePassword.aspx" />
@@ -119,6 +120,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="CreateCharges.aspx" />
     <Content Include="CreateUser.aspx" />
+    <Content Include="css\MenuDev.xml" />
     <Content Include="css\my.css" />
     <Content Include="css\w3.css" />
     <Content Include="Default.aspx" />
@@ -129,6 +131,45 @@
     <Content Include="dischargePatient.aspx" />
     <Content Include="DoctorsList.aspx" />
     <Content Include="emergency.aspx" />
+    <Content Include="Expense\ajaxreturntodayexpense.aspx" />
+    <Content Include="Expense\ajaxreturntodayincome.aspx" />
+    <Content Include="Expense\ajaxscript.js" />
+    <Content Include="Expense\allexpenses.aspx" />
+    <Content Include="Expense\allhospitalincome.aspx" />
+    <Content Include="Expense\CSS\ourstyle.css" />
+    <Content Include="Expense\CSS\StyleSheet.css" />
+    <Content Include="Expense\MasterPage.Master" />
+    <Content Include="Expense\Resources\addemployee.png" />
+    <Content Include="Expense\Resources\addpatientexpense -.png" />
+    <Content Include="Expense\Resources\alldataicon.png" />
+    <Content Include="Expense\Resources\chechdoctorcuticon.png" />
+    <Content Include="Expense\Resources\checkloanicon.png" />
+    <Content Include="Expense\Resources\employeedetails.png" />
+    <Content Include="Expense\Resources\expenseback.jpg" />
+    <Content Include="Expense\Resources\expenseicon.png" />
+    <Content Include="Expense\Resources\extraincomeicon.png" />
+    <Content Include="Expense\Resources\geetanjaliLogo.png" />
+    <Content Include="Expense\Resources\homeicon.png" />
+    <Content Include="Expense\Resources\hospitalicon.png" />
+    <Content Include="Expense\Resources\ledger.png" />
+    <Content Include="Expense\Resources\loandata.png" />
+    <Content Include="Expense\Resources\loanicon.png" />
+    <Content Include="Expense\Resources\loanpersonicon.png" />
+    <Content Include="Expense\Resources\loginback.jpg" />
+    <Content Include="Expense\Resources\logout.png" />
+    <Content Include="Expense\Resources\medicineicon.png" />
+    <Content Include="Expense\Resources\paidloan.png" />
+    <Content Include="Expense\Resources\pathologyicon.png" />
+    <Content Include="Expense\Resources\patientexpense.png" />
+    <Content Include="Expense\Resources\patientexpensedetails.png" />
+    <Content Include="Expense\Resources\paydoctorsicon.png" />
+    <Content Include="Expense\Resources\pendingamounticon.png" />
+    <Content Include="Expense\Resources\receivependingicon.png" />
+    <Content Include="Expense\Resources\refferetbyicon.png" />
+    <Content Include="Expense\Resources\setcuticon.png" />
+    <Content Include="Expense\Resources\updateprofileicon.png" />
+    <Content Include="Expense\Web.config" />
+    <Content Include="Expense\WebForm1.aspx" />
     <Content Include="extraIncome.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="filter.aspx" />
@@ -220,8 +261,8 @@
     <Content Include="Content\bootstrap-grid.css.map" />
     <Content Include="printIPD.aspx" />
     <Content Include="unauthorizedPage.aspx" />
+    <Content Include="WebForm2.aspx" />
     <Content Include="xrayPathList.aspx" />
-    <None Include="Properties\PublishProfiles\FTPProfile.pubxml" />
     <None Include="Scripts\jquery-3.6.0.intellisense.js" />
     <Content Include="Scripts\jquery-3.6.0.js" />
     <Content Include="Scripts\jquery-3.6.0.min.js" />
@@ -334,6 +375,13 @@
     <Content Include="Site.Mobile.Master" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="allhospitalincome.aspx.cs">
+      <DependentUpon>allhospitalincome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="allhospitalincome.aspx.designer.cs">
+      <DependentUpon>allhospitalincome.aspx</DependentUpon>
+    </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="About.aspx.cs">
       <DependentUpon>About.aspx</DependentUpon>
@@ -447,6 +495,48 @@
     </Compile>
     <Compile Include="emergency.aspx.designer.cs">
       <DependentUpon>emergency.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Expense\ajaxreturntodayexpense.aspx.cs">
+      <DependentUpon>ajaxreturntodayexpense.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Expense\ajaxreturntodayexpense.aspx.designer.cs">
+      <DependentUpon>ajaxreturntodayexpense.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Expense\ajaxreturntodayincome.aspx.cs">
+      <DependentUpon>ajaxreturntodayincome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Expense\ajaxreturntodayincome.aspx.designer.cs">
+      <DependentUpon>ajaxreturntodayincome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Expense\allexpenses.aspx.cs">
+      <DependentUpon>allexpenses.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Expense\allexpenses.aspx.designer.cs">
+      <DependentUpon>allexpenses.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Expense\allhospitalincome.aspx.cs">
+      <DependentUpon>allhospitalincome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Expense\allhospitalincome.aspx.designer.cs">
+      <DependentUpon>allhospitalincome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Expense\MasterPage.Master.cs">
+      <DependentUpon>MasterPage.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Expense\MasterPage.Master.designer.cs">
+      <DependentUpon>MasterPage.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Expense\WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Expense\WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
     </Compile>
     <Compile Include="extraIncome.aspx.cs">
       <DependentUpon>extraIncome.aspx</DependentUpon>
@@ -753,6 +843,13 @@
     <Compile Include="printIPD.aspx.designer.cs">
       <DependentUpon>printIPD.aspx</DependentUpon>
     </Compile>
+    <Compile Include="WebForm2.aspx.cs">
+      <DependentUpon>WebForm2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm2.aspx.designer.cs">
+      <DependentUpon>WebForm2.aspx</DependentUpon>
+    </Compile>
     <Compile Include="xrayPathList.aspx.cs">
       <DependentUpon>xrayPathList.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -764,6 +861,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Extentions\" />
+    <Folder Include="Properties\PublishProfiles\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -790,10 +888,6 @@
     <ProjectReference Include="..\IOPD.DataManager\IOPD.DataManager.csproj">
       <Project>{fa234522-d22b-47d8-9c05-0caf7fd27b5d}</Project>
       <Name>IOPD.DataManager</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\MdbManager\MdbManager.csproj">
-      <Project>{533e4989-bf23-4421-b950-9954aaa3d3b6}</Project>
-      <Name>MdbManager</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

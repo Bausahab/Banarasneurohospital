@@ -44,7 +44,7 @@ namespace OIPD
             catch(Exception uu)
             {
                 
-                Response.Redirect("departmentlist.aspx");
+                Response.Redirect($"departmentlist.aspx?{uu.Message}");
             }
         }
 
@@ -58,7 +58,7 @@ namespace OIPD
                     throw new Exception("Please Select BanarasNeuro or Ayushman");
 
 
-                ipNumber.Text = PatientUtilities.getNewPatientIPNumber(cal1.SelectedDate.Date);
+                ipNumber.Text = PatientUtilities.getNewPatientIPNumber(Convert.ToDateTime(txtdate.Text));
 
                 if (txtfirstname.Text.Equals(""))
                     throw new Exception("Please Enter First Name");
@@ -127,7 +127,7 @@ namespace OIPD
 
                 rdoLst.Enabled = false;
                 lbldepart.Enabled = false;
-                cal1.Enabled = false;
+                txtdate.Enabled = false;
                 dropdowntitle.Enabled = false;
                 txtfirstname.Enabled = false;
                 txtlastname.Enabled = false;
@@ -147,7 +147,7 @@ namespace OIPD
 
                 rdoLst.CssClass = rdoLst.CssClass + "w3-gray";
                 lbldepart.CssClass = lbldepart.CssClass.Replace("w3-sand", "w3-gray");
-                cal1.CssClass = cal1.CssClass.Replace("w3-sand", "w3-gray");
+                txtdate.CssClass = txtdate.CssClass.Replace("w3-sand", "w3-gray");
                 dropdowntitle.CssClass = dropdowntitle.CssClass.Replace("w3-sand", "w3-gray");
                 txtfirstname.CssClass = txtfirstname.CssClass.Replace("w3-sand", "w3-gray");
                 txtlastname.CssClass = txtlastname.CssClass.Replace("w3-sand", "w3-gray");
@@ -169,7 +169,7 @@ namespace OIPD
 
                 DateTime dt = System.DateTime.Now;
                 // dt = dt.AddHours(12.50);
-                DateTime date = cal1.SelectedDate.Date;
+                DateTime date = Convert.ToDateTime(txtdate.Text);
 
                 int patientType = Convert.ToInt32(rdoLst.SelectedValue);
                 int tpanumber = 0;
@@ -234,7 +234,7 @@ namespace OIPD
         {
             rdoLst.Enabled = true;
             lbldepart.Enabled = true;
-            cal1.Enabled = true;
+            txtdate.Enabled = true;
             dropdowntitle.Enabled = true;
             txtfirstname.Enabled = true;
             txtlastname.Enabled = true;
@@ -252,7 +252,7 @@ namespace OIPD
 
             rdoLst.CssClass = rdoLst.CssClass.Replace("w3-gray", "");
             lbldepart.CssClass = lbldepart.CssClass.Replace("w3-gray", "w3-sand");
-            cal1.CssClass = cal1.CssClass.Replace("w3-gray", "w3-sand");
+            txtdate.CssClass = txtdate.CssClass.Replace("w3-gray", "w3-sand");
             dropdowntitle.CssClass = dropdowntitle.CssClass.Replace("w3-gray", "w3-sand");
             txtfirstname.CssClass = txtfirstname.CssClass.Replace("w3-gray", "w3-sand");
             txtlastname.CssClass = txtlastname.CssClass.Replace("w3-gray", "w3-sand");
@@ -307,6 +307,16 @@ namespace OIPD
                 lblHospital.Visible = true;
                 lblDocNumber.Visible = true;
                 lblDocNumber.Text = "Doctor's Number";
+                txtDocNumber.Visible = true;
+                txtDocNumber.Text = "";
+            }
+            if (drpdwnRef.SelectedIndex == 3)
+            {
+                drpdwnHospital.Visible = false;
+                txtreffered.Visible = true;
+                lblHospital.Visible = true;
+                lblDocNumber.Visible = true;
+                lblDocNumber.Text = "Person's Number";
                 txtDocNumber.Visible = true;
                 txtDocNumber.Text = "";
             }

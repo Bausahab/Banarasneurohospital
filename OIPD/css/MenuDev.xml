@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap>
+  <siteMapNode title="HOME" url="home.aspx"/>
+  <siteMapNode title="OPD/IPD">
+    <siteMapNode title="OPD">
+      <siteMapNode title="PATIENT">
+        <siteMapNode title="ADD"  url="departmentlist.aspx"/>
+        <siteMapNode title="RENEW"  url="renewal.aspx"/>
+      </siteMapNode>
+    </siteMapNode>
+    <siteMapNode title="IPD">
+      <siteMapNode title="REGISTER"  url="ipdregistration.aspx"/>
+    </siteMapNode>
+  </siteMapNode>
+</siteMap>

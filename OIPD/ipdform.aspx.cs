@@ -147,7 +147,7 @@ namespace OIPD
 
 
             DateTime dat = System.DateTime.Now;
-            dat = dat.AddHours(12.50);
+          //  dat = dat.AddHours(12.50);
             DateTime dt = Convert.ToDateTime((txtDate.Text) + " " + dat.Hour + ":" + dat.Minute + dat.ToString("tt"));
 
             int sno = Convert.ToInt32(Request.QueryString["patientno"]);

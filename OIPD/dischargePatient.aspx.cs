@@ -134,7 +134,7 @@ namespace OIPD
                 else dischargemedicine = txtDischargeMedicine.Text.ToString();
 
                 DateTime dt = System.DateTime.Now;
-                dt = dt.AddHours(12.50);
+               // dt = dt.AddHours(12.50);
                 DateTime date = Convert.ToDateTime((txtdate.Text) + " " + dt.Hour + ":" + dt.Minute + dt.ToString("tt"));
                 string leave = bedUtilities.leaveBed(bedno, date, Convert.ToInt32("" + Request.QueryString["patientno"]), "" + drpdwnDschrgReason.SelectedItem, LoginManager.CurrentUser(Session));
                 if (!(leave.Equals("successfull")))

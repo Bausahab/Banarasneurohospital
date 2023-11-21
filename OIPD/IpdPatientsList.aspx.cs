@@ -52,7 +52,7 @@ namespace OIPD
                         {
                             DataSet1.expensesDataTable done = dda.GetDataByChargeName(dr.patientno, type);
                             DateTime sys = System.DateTime.Now;
-                            sys = sys.AddHours(12.50);
+                          //  sys = sys.AddHours(12.50);
                             if (done.Rows.Count != 0)
                             {
                                 for (int x = 0; x < done.Rows.Count; x++)
@@ -79,7 +79,7 @@ namespace OIPD
                     for (int i = 0; i < cdt.Rows.Count; i++)
                     {
                         DateTime sys = System.DateTime.Now;
-                        sys = sys.AddHours(12.50);
+                       // sys = sys.AddHours(12.50);
                         DataSet1.chargesRow cr = (DataSet1.chargesRow)cdt.Rows[i];
                         DataSet1.expensesDataTable done = dda.GetDataByChargeName(dr.patientno, cr.chargeName);
                         if (done.Rows.Count != 0)
