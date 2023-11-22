@@ -165,7 +165,8 @@
                     <asp:ListItem Text="Cash" Value="Cash"></asp:ListItem>
                     <asp:ListItem Text="Cheque" Value="Cheque"></asp:ListItem>
                     <asp:ListItem Text="Credit Card" Value="Credit Card"></asp:ListItem>
-                    <asp:ListItem Text="Debit Card/UPI" Value="Debit Card"></asp:ListItem>
+                    <asp:ListItem Text="Debit Card" Value="Debit Card"></asp:ListItem>
+                    <asp:ListItem Value="UPI">UPI-IMPS-NEFT</asp:ListItem>
                 </asp:DropDownList>
                 <asp:Label ID="lblModeData" runat="server" Visibl="false" CssClass="w3-col s6 w3-large"></asp:Label>
                 <asp:TextBox ID="txtModeData" runat="server" Visible="false" CssClass="w3-col s6 w3-input w3-sand"></asp:TextBox>

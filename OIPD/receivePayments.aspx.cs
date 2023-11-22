@@ -235,10 +235,18 @@ namespace OIPD
             else if (x == 4)
             {
                 lblModeData.Visible = true;
-                lblModeData.Text = "<b>Debit Card/UPI Trans Number</b>";
+                lblModeData.Text = "<b>Debit Card</b>";
                 txtModeData.Visible = true;
                 txtModeData.Text = "";
-                txtModeData.Attributes.Add("placeholder", "Debit Card/UPI Trans Number");
+                txtModeData.Attributes.Add("placeholder", "Debit Card");
+            }
+            else if (x == 5)
+            {
+                lblModeData.Visible = true;
+                lblModeData.Text = "<b>UPI-NEFT-IMPS</b>";
+                txtModeData.Visible = true;
+                txtModeData.Text = "";
+                txtModeData.Attributes.Add("placeholder", "Transaction Number");
             }
             string discountcomment = txtDiscComment.Text.ToString();
         }
