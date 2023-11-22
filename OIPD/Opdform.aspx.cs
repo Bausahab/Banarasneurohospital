@@ -92,6 +92,11 @@ namespace OIPD
                 {
                     refference = "" + drpdwnRef.SelectedValue;
                 }
+                else if(drpdwnRef.SelectedIndex == 3)
+                {
+                    refference = drpdwnRef.SelectedValue;
+                    doctorNo = txtDocNumber.Text;
+                }
                 else
                 {
                     if (drpdwnRef.SelectedIndex == 1)
@@ -112,7 +117,7 @@ namespace OIPD
                         }
                     }
                     if (txtDocNumber.Text.Equals(""))
-                        throw new Exception("Please Enter \"None\" if doctor's number is not available");
+                        throw new Exception("Please Enter \"None\" if  number is not available");
                     else
                         doctorNo = txtDocNumber.Text;
                 }

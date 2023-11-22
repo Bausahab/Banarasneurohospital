@@ -46,12 +46,16 @@ namespace OIPD
                 lblmobileNumber.Text = "" + patient.mobileno;
                 lblrefFrom.Text = "" + patient.referredfrom;
 
-                if (!patient.referredfrom.Equals("Self"))
+                if (!patient.referredfrom.Equals("Self") || !patient.referredfrom.Equals("Person"))
                 {
                     lblreferer.Text = "<b>Reffer Number -:</b>";
                     lblrefnumber.Text = patient.doctorno;
                 }
-
+                if (patient.referredfrom.Equals("Person"))
+                {
+                    lblreferer.Text = "<b>Reffer Number -:</b>";
+                    lblrefnumber.Text = patient.doctorno;
+                }
                 expenses ex = new expenses(patient.patientno);
                 receiptNo.Text = "" + ex.getReceiptNo();
 

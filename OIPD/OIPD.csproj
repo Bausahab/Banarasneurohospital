@@ -136,8 +136,14 @@
     <Content Include="Expense\ajaxscript.js" />
     <Content Include="Expense\allexpenses.aspx" />
     <Content Include="Expense\allhospitalincome.aspx" />
+    <Content Include="Expense\allincomes.aspx" />
+    <Content Include="Expense\allmedicalincome.aspx" />
+    <Content Include="Expense\allpathologyincome.aspx" />
+    <Content Include="Expense\alltotaldata.aspx" />
+    <Content Include="Expense\checkdoctorscut.aspx" />
     <Content Include="Expense\CSS\ourstyle.css" />
     <Content Include="Expense\CSS\StyleSheet.css" />
+    <Content Include="Expense\login.aspx" />
     <Content Include="Expense\MasterPage.Master" />
     <Content Include="Expense\Resources\addemployee.png" />
     <Content Include="Expense\Resources\addpatientexpense -.png" />
@@ -523,6 +529,48 @@
     </Compile>
     <Compile Include="Expense\allhospitalincome.aspx.designer.cs">
       <DependentUpon>allhospitalincome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Expense\allincomes.aspx.cs">
+      <DependentUpon>allincomes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Expense\allincomes.aspx.designer.cs">
+      <DependentUpon>allincomes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Expense\allmedicalincome.aspx.cs">
+      <DependentUpon>allmedicalincome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Expense\allmedicalincome.aspx.designer.cs">
+      <DependentUpon>allmedicalincome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Expense\allpathologyincome.aspx.cs">
+      <DependentUpon>allpathologyincome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Expense\allpathologyincome.aspx.designer.cs">
+      <DependentUpon>allpathologyincome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Expense\alltotaldata.aspx.cs">
+      <DependentUpon>alltotaldata.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Expense\alltotaldata.aspx.designer.cs">
+      <DependentUpon>alltotaldata.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Expense\checkdoctorscut.aspx.cs">
+      <DependentUpon>checkdoctorscut.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Expense\checkdoctorscut.aspx.designer.cs">
+      <DependentUpon>checkdoctorscut.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Expense\login.aspx.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Expense\login.aspx.designer.cs">
+      <DependentUpon>login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Expense\MasterPage.Master.cs">
       <DependentUpon>MasterPage.Master</DependentUpon>
